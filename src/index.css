@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@font-face {
+  font-family: "ArbRiyadBank";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ArbRiyadBank-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ArbRiyadBank";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/ArbRiyadBank-Bold.ttf") format("truetype");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "ArbRiyadBank";
+  background-color: #fff;
+}
