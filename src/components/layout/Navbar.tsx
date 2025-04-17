@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     <header className="shadow-md fixed top-0 left-0 w-full bg-white z-50">
       <nav className="container mx-auto flex items-center justify-between h-16 px-4 sm:px-10">
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
-          <img src={Logo} alt="logo" className="h-12 w-auto" />
+          <img src={Logo} alt="logo" className="h-12 w-auto me-6" />
           <div className="hidden lg:flex items-center gap-4 text-[#10357F] text-lg font-medium">
             {navLinks.map((link, index) => (
               <React.Fragment key={link.to}>

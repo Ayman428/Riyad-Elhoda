@@ -14,6 +14,7 @@ const sliderImages = [
     '/assets/HeroBg.png',
     '/assets/HeroBg1.png',
     '/assets/HeroBg2.png',
+    '/assets/HeroBg3.png',
 ];
 
 const Hero: React.FC<HeroProps> = ({
