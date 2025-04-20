@@ -1,0 +1,62 @@
+{
+  "title": "القيم",
+  "mainHeading": "المساواة: التمتع بجميع الحقوق السياسية والاقتصادية والاجتماعية دون تمييز بسبب الدين أو اللون أو اللغة أو الجنس أو الرأي السياسي أو المستوى الاجتماعي",
+  "creativityTitle": "الإبداع والابتكار",
+  "creativitySubtext": "نص",
+  "islamicValuesTitle": "تعزيز القيم الإسلامية",
+  "islamicValuesSubtext": "نص",
+  "developmentTitle": "التنمية الشاملة",
+  "developmentSubtext": "نص",
+  "excellenceTitle": "التميز والجودة",
+  "excellenceSubtext": "نص",
+  "en": {
+    "riyadhAlHuda": {
+      "title": "Riyadh Al-Huda Company",
+      "description": [
+        "Riyadh Al-Huda Private Schools for Quran Memorization",
+        "Located in Al-Firdous district in Jubail Industrial City",
+        "Provides a distinguished educational curriculum with special",
+        "focus on Quran memorization. Specialized for girls and includes",
+        "elementary, middle, and high school levels.",
+        "Seeks to provide a safe and advanced educational environment,",
+        "and high-quality education that helps students achieve their",
+        "full potential."
+      ],
+      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+    },
+    "riyadhAlFayhaa": {
+      "title": "Riyadh Al-Fayhaa Schools",
+      "description": [
+        "Riyadh Al-Fayhaa Schools in the Eastern Region,",
+        "city of knowledge and industry",
+        "One of the branches of Riyadh Al-Huda Schools, established in 1419 AH",
+        "with the aim of providing valuable educational services",
+        "to the Jubail community in cooperation with the Ministry of Education.",
+        "Our schools seek to provide educational services of high quality",
+        "according to international standards with community participation."
+      ],
+      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+    },
+    "riyadhAlHudaKindergarten": {
+      "title": "Riyadh Al-Huda Kindergarten",
+      "description": [
+        "Riyadh Al-Huda Kindergarten 2 in Al-Fayhaa 18 offers a",
+        "distinguished curriculum that seeks to enhance education",
+        "with a scientific approach and a distinctive family atmosphere",
+        "to build a creative generation that loves its religion and country."
+      ],
+      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+    },
+    "alFayhaaCollege": {
+      "title": "Al-Fayhaa National College",
+      "description": [
+        "Riyadh Al-Huda Kindergarten 2 in Al-Fayhaa 18 offers a",
+        "distinguished curriculum that seeks to enhance education",
+        "with a scientific approach and a distinctive family atmosphere",
+        "to build a creative generation that loves its religion and country."
+      ],
+      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+    },
+    "contactButtonText": "Contact Us"
+  }
+}
