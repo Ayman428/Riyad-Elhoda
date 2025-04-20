@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import WrapperContainer from '../reuse/WrapperContainer';
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import i18n from '../../utils/i18n';
 
 interface HeroProps {
     backgroundImage: string;
     title: string;
-    header: string;
+    header?: string;
     description: string;
+    classplus: string,
     isHomePage?: boolean;
 }
 
@@ -22,6 +24,7 @@ const Hero: React.FC<HeroProps> = ({
     title,
     header,
     description,
+    classplus,
     isHomePage = false,
 }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,11 +57,11 @@ const Hero: React.FC<HeroProps> = ({
 
             <WrapperContainer>
                 <div className="flex items-center h-full relative z-10">
-                    <div className="relative z-20 text-white w-full flex flex-col justify-center max-w-5xl">
+                    <div className={`relative z-20 text-white w-full flex flex-col justify-center ${classplus}`}>
                         <h4 className="text-lg md:text-xl font-medium uppercase mb-2">{title}</h4>
                         <h1 className="text-3xl md:text-5xl font-bold mb-4">{header}</h1>
                         <p className="text-base md:text-lg mb-6">{description}</p>
-                        <button className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]">سجل معنا الان <IoArrowBack /></button>
+                        <button className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]">{i18n.language === "ar" ? "سجل معنا الان" : "Register With Us Now"} {i18n.language === "ar" ?  <IoArrowBack /> : <IoArrowForward />} </button>
                     </div>
                 </div>
             </WrapperContainer>

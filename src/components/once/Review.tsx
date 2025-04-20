@@ -96,8 +96,7 @@ const Reviews: React.FC = () => {
 
             {/* Pagination */}
             <div
-                className={`flex justify-center items-center space-x-4 ${i18n.language === "ar" ? "rtl:space-x-reverse" : ""
-                    } mt-16`}
+                className={`flex justify-center items-center space-x-4 mt-16`}
             >
                 <button
                     onClick={handlePrev}
