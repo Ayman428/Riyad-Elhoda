@@ -3,8 +3,10 @@ import Hero from "../components/once/Hero";
 import NewsLetter from "../components/once/NewsLetter";
 import Review from "../components/once/Review";
 import Sponsors from "../components/once/Sponsors";
-import AboutAlhuda from "../components/reuse/AboutAlhuda";
 import FAQs from "../components/reuse/FAQs";
+import GoalsContainer from "../components/reuse/GoalsContainer";
+import HomeAboutAlhuda from "../components/reuse/HomeAboutAlhuda";
+import WrapperContainer from "../components/reuse/WrapperContainer";
 
 const Home = () => {
   return (
@@ -16,7 +18,10 @@ const Home = () => {
         description="شركة مدارس رياض الهدى هي مؤسسة تعليمية رائدة، تسعى إلى تقديم تعليم متميز يرتكز على أسس علمية حديثة ومتطورة. نؤمن بأهمية بناء جيل واعٍ ومبدع، يمتلك المهارات والمعارف التي تؤهله لمواكبة متطلبات العصر،"
         isHomePage={true}
       />
-      <AboutAlhuda />
+      <WrapperContainer>
+        <HomeAboutAlhuda />
+        <GoalsContainer />
+      </WrapperContainer>
       <Review />
       <Container
         title="نُنمّي العقول، ونبني المهارات، لنصل بأبنائنا إلى القمة علمًا وخلقًا وتميّزًا"

@@ -1,37 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
-import apiClient from "../../src/utils/api-client";
+import apiClient from "../utils/api-client";
 import { useTranslation } from "react-i18next";
 
-export interface AboutSchools {
-  id: number;
-  background: string;
+export interface AboutSchool {
+  name: string;
   title: string;
   text: string;
-  status: number;
-  tags: string | null;
+  image: string;
 }
 
-export const getAboutSchools = async (language: string) => {
-  const res = await apiClient.get<{ data: AboutSchools[] }>(
-    "/api/frontend/staticPages",
-    {
-      params: {
-        lang: language,
-      },
-    }
+export const getAboutSchool = async () => {
+  const res = await apiClient.get<{ data: AboutSchool[] }>(
+    "/api/frontend/staticPages"
   );
-  console.log("AboutSchools =>", res.data.data);
-  return res.data.data;
+  console.log("SchoolVision =>", res.data);
+  return res.data.data; // Access the 'data' array from the API response
 };
 
 export const useFetchAboutSchools = () => {
   const { i18n } = useTranslation();
-
   return useQuery({
-    queryKey: ["AboutSchools", i18n.language],
-    queryFn: () => getAboutSchools(i18n.language), // Pass the current language
-    staleTime: 0,
-    retry: 3,
-    refetchOnWindowFocus: false,
+    queryKey: ["SchoolVision", i18n.language],
+    queryFn: getAboutSchool,
+    staleTime: 0, // Data will be considered fresh for 5 minutes
+    retry: 3, // Retry the request up to 3 times on failure
+    refetchOnWindowFocus: false, // Disable refetch when the window regains focus
   });
 };
