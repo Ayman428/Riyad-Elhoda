@@ -1,6 +1,7 @@
 import Container from "../components/once/Container";
 import Hero from "../components/once/Hero";
 import NewsLetter from "../components/once/NewsLetter";
+import Review from "../components/once/Review";
 import Sponsors from "../components/once/Sponsors";
 import FAQs from "../components/reuse/FAQs";
 import WrapperContainer from "../components/reuse/WrapperContainer";
@@ -71,6 +72,18 @@ const Home = () => {
             </div>
           </div>
           <NavigationButton to="" title="عرض المزيد" />
+            <Hero
+                backgroundImage="/assets/HeroBg.png"
+                title="شركة مدارس رياض الهدى"
+                header="Riyadh AL-Huda Schools"
+                description="شركة مدارس رياض الهدى هي مؤسسة تعليمية رائدة، تسعى إلى تقديم تعليم متميز يرتكز على أسس علمية حديثة ومتطورة. نؤمن بأهمية بناء جيل واعٍ ومبدع، يمتلك المهارات والمعارف التي تؤهله لمواكبة متطلبات العصر،"
+                isHomePage={true}
+            />
+            <Review />
+            <Container title="نُنمّي العقول، ونبني المهارات، لنصل بأبنائنا إلى القمة علمًا وخلقًا وتميّزًا" buttonText="سجل معنا الآن" />
+            <FAQs />
+            <NewsLetter />
+            <Sponsors />
         </div>
       </WrapperContainer>
 
