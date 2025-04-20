@@ -3,7 +3,12 @@ import AboutAlhuda from "../../../public/assets/AboutAlhudaIMG.png";
 import elipsesLG from "../../../public/assets/Ellipse 6.png";
 import aboutIcon from "../../../public/icons/Vector.png";
 import NavigationButton from "./NavigationButton";
+import { useFetchAboutSchools } from "../../hooks/useFetchAboutSchools";
+import { useTranslation } from "react-i18next";
 const HomeAboutAlhuda = () => {
+  const { data } = useFetchAboutSchools();
+  const { t } = useTranslation();
+
   return (
     <>
       <div className=" w-full mb-14 mt-14 xl:flex items-center">
@@ -15,21 +20,14 @@ const HomeAboutAlhuda = () => {
                 src={aboutIcon}
                 alt="aboutIcon"
               />
-              <HeaderOne label="من نحن" />
+              {data && <HeaderOne label={data[0].name} />}
             </div>
             <p className="text-[#071839] text-5xl font-bold mb-4 w-[90%] mt-1.5">
-              لأجل جيلٍ واعٍ، نضع الأساس في رياض الهدى.
+              {data && data[0].title}
             </p>
           </div>
           <div>
-            <p className="text-[#535353] text-[16px]">
-              شركة مدارس رياض الهدى هي مؤسسة تعليمية رائدة، تسعى إلى تقديم تعليم
-              متميز يرتكز على أسس علمية حديثة ومتطورة. تهدف في إعداد جيل من
-              الطلاب والطالبات القادرين على مواجهة تحديات المستقبل. نحن نؤمن ان
-              التعليم هو الاساس لبناء مجتمع قوى ومتقدم , لذلك نسعى جاهدين لتوفير
-              بيئة التعليم المتميز تحفز الإبداع والإبتكار وتدعم الطموح الشخصي
-              لكل طالب وطالبة.
-            </p>
+            <p className="text-[#535353] text-[16px]">{data && data[0].text}</p>
           </div>
         </div>
 
@@ -50,7 +48,7 @@ const HomeAboutAlhuda = () => {
         </div>
       </div>
       <div className="mb-10">
-        <NavigationButton to="/" title="عرض المزيد" />
+        <NavigationButton to="/" title={t("home:button.showMore")} />
       </div>
     </>
   );

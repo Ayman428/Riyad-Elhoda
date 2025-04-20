@@ -7,6 +7,8 @@ import {
   navbarAr,
   equalityEn,
   equalityAr,
+  homeAr,
+  homeEn,
 } from "../../public/locals";
 
 const resources = {
@@ -14,11 +16,13 @@ const resources = {
     header: headerEn,
     navbar: navbarEn,
     equality: equalityEn,
+    home: homeEn,
   },
   ar: {
     header: headerAr,
     navbar: navbarAr,
     equality: equalityAr,
+    home: homeAr,
   },
 } as const;
 
