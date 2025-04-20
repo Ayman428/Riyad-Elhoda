@@ -29,7 +29,7 @@ const SchoolGoalCard = ({ icon, title, body }: CardProps) => {
       {/* Body */}
       <p
         data-aos="fade-up"
-        className="text-sm sm:text-base text-white/80 leading-relaxed pb-45 line-clamp-4"
+        className="text-sm sm:text-base text-[#FCFCFC] leading-relaxed pb-45 line-clamp-4"
       >
         {body}
       </p>
