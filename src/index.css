@@ -7,7 +7,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/Cairo-Regular.ttf") format("truetype");
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -21,6 +21,6 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   background-color: #fff;
 }
