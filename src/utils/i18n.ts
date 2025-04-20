@@ -5,16 +5,20 @@ import {
   headerAr,
   navbarEn,
   navbarAr,
+  equalityEn,
+  equalityAr,
 } from "../../public/locals";
 
 const resources = {
   en: {
     header: headerEn,
     navbar: navbarEn,
+    equality: equalityEn,
   },
   ar: {
     header: headerAr,
     navbar: navbarAr,
+    equality: equalityAr,
   },
 } as const;
 
