@@ -1,18 +1,23 @@
+import { useTranslation } from "react-i18next";
+import EqualityValues from "../components/once/EqualityValues";
 import Hero from "../components/once/Hero";
 import AboutAlhuda from "../components/reuse/AboutAlhuda";
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <Hero
+        classplus="pt-20"
         backgroundImage="/assets/HeroBg3.png"
-        title="شركة مدارس رياض الهدى"
+        title={t("header:riyadhAlHudaTitle")}
         header="Riyadh AL-Huda Schools"
-        description="شركة مدارس رياض الهدى هي مؤسسة تعليمية رائدة، تسعى إلى تقديم تعليم متميز يرتكز على أسس علمية حديثة ومتطورة. نؤمن بأهمية بناء جيل واعٍ ومبدع، يمتلك المهارات والمعارف التي تؤهله لمواكبة متطلبات العصر،"
+        description={t("header:riyadhAlHudaTitle")}
         isHomePage={false}
       />
-
       <AboutAlhuda />
+      <EqualityValues />
     </div>
   );
 };

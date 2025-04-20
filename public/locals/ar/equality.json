@@ -11,52 +11,51 @@
   "excellenceSubtext": "نص",
   "en": {
     "riyadhAlHuda": {
-      "title": "Riyadh Al-Huda Company",
+      "title": "شركة رياض الهدى",
       "description": [
-        "Riyadh Al-Huda Private Schools for Quran Memorization",
-        "Located in Al-Firdous district in Jubail Industrial City",
-        "Provides a distinguished educational curriculum with special",
-        "focus on Quran memorization. Specialized for girls and includes",
-        "elementary, middle, and high school levels.",
-        "Seeks to provide a safe and advanced educational environment,",
-        "and high-quality education that helps students achieve their",
-        "full potential."
+        "مدارس رياض الهدى الأهلية لتحفيظ القرآن الكريم",
+        "تقع في حي الفردوس بمدينة الجبيل الصناعية وتقدم",
+        "منهجاً تعليمياً متميزاً مع تركيز خاص على تحفيظ القرآن",
+        "الكريم، وهي متخصصة للبنات وتشمل المراحل التعليمية",
+        "الابتدائي، المتوسط، والثانوي",
+        "تسعى لتوفير بيئة تعليمية آمنة ومتطورة، وتقديم تعليماً",
+        "عالي الجودة يساعد الطالبات على تحقيق إمكاناتهن",
+        "الكاملة"
       ],
-      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+      "address": "الرياض - حي النرجس - شارع الأمير فيصل بن بندر"
     },
     "riyadhAlFayhaa": {
-      "title": "Riyadh Al-Fayhaa Schools",
+      "title": "مدارس رياض الفيحاء",
       "description": [
-        "Riyadh Al-Fayhaa Schools in the Eastern Region,",
-        "city of knowledge and industry",
-        "One of the branches of Riyadh Al-Huda Schools, established in 1419 AH",
-        "with the aim of providing valuable educational services",
-        "to the Jubail community in cooperation with the Ministry of Education.",
-        "Our schools seek to provide educational services of high quality",
-        "according to international standards with community participation."
+        "مدارس رياض الفيحاء بالمنطقة الشرقية بمدينة العلم و",
+        "الصناعة",
+        "هي إحدى فروع مدارس رياض الهدى تأسست عام 1419",
+        "هجري بهدف تقديم خدمات",
+        "تعليمية و تربوية قيمة لمجتمع الجبيل وبالتعاون مع وزارة",
+        "التعليم تسعى مدارسنا إلى",
+        "تقديم خدمات تربوية و تعليمية ذات جودة عالية وفق",
+        "معايير عالمية بمشاركة مجتمعية"
       ],
-      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+      "address": "الرياض - حي النرجس - شارع الأمير فيصل بن بندر"
     },
     "riyadhAlHudaKindergarten": {
-      "title": "Riyadh Al-Huda Kindergarten",
+      "title": "روضة رياض الهدى",
       "description": [
-        "Riyadh Al-Huda Kindergarten 2 in Al-Fayhaa 18 offers a",
-        "distinguished curriculum that seeks to enhance education",
-        "with a scientific approach and a distinctive family atmosphere",
-        "to build a creative generation that loves its religion and country."
+        "روضة رياض الهدى 2 في حي الفيحاء 18 تقدم منهجا",
+        "متميزاً تسعى لتعزيز تعليم النشء بأسلوب علمي وجو",
+        "عائلي مميز لبناء جيل مبدع محبا لدينه ووطنه"
       ],
-      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+      "address": "الرياض - حي النرجس - شارع الأمير فيصل بن بندر"
     },
     "alFayhaaCollege": {
-      "title": "Al-Fayhaa National College",
+      "title": "كليه الفيحاء الاهليه",
       "description": [
-        "Riyadh Al-Huda Kindergarten 2 in Al-Fayhaa 18 offers a",
-        "distinguished curriculum that seeks to enhance education",
-        "with a scientific approach and a distinctive family atmosphere",
-        "to build a creative generation that loves its religion and country."
+        "روضة رياض الهدى 2 في حي الفيحاء 18 تقدم منهجا",
+        "متميزاً تسعى لتعزيز تعليم النشء بأسلوب علمي وجو",
+        "عائلي مميز لبناء جيل مبدع محبا لدينه ووطنه"
       ],
-      "address": "Riyadh - Al-Narjis District - Prince Faisal bin Bandar Street"
+      "address": "الرياض - حي النرجس - شارع الأمير فيصل بن بندر"
     },
-    "contactButtonText": "Contact Us"
+    "contactButtonText": "تواصل معنا"
   }
 }

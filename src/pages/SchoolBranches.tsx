@@ -1,15 +1,20 @@
+import { useTranslation } from "react-i18next";
 import Hero from "../components/once/Hero";
+import LocationContactCard from "../components/once/LocationContactCard";
 
 const SchoolBranches = () => {
+    const { t } = useTranslation();
+
     return (
         <div>
             <Hero
+                classplus="pt-20"
                 backgroundImage="/assets/HeroBg4.png"
-                title="شركة مدارس رياض الهدى"
-                header="Riyadh AL-Huda Schools"
-                description="شركة مدارس رياض الهدى هي مؤسسة تعليمية رائدة، تسعى إلى تقديم تعليم متميز يرتكز على أسس علمية حديثة ومتطورة. نؤمن بأهمية بناء جيل واعٍ ومبدع، يمتلك المهارات والمعارف التي تؤهله لمواكبة متطلبات العصر،"
+                title={t("header:riyadhAlHudaBranches")}
+                description={t("header:riyadhAlHudaBranchesDetails")}
                 isHomePage={false}
             />
+            <LocationContactCard />
         </div>
     )
 }
