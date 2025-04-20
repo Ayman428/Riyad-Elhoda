@@ -19,7 +19,7 @@ const GoalsContainer = () => {
           }}
         />
 
-        <div className="w-[80%] m-auto mt-3">
+        <div className="w-[90%] m-auto mt-3">
           <p className="text-white text-2xl xl:text-5xl font-bold text-center">
             {t("home:goals.title")}
           </p>
