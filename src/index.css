@@ -1,25 +1,26 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+
 @font-face {
-  font-family: "ArbRiyadBank";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/ArbRiyadBank-Regular.ttf") format("truetype");
+  src: url("/fonts/Cairo-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "ArbRiyadBank";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/fonts/ArbRiyadBank-Bold.ttf") format("truetype");
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: "ArbRiyadBank";
+  font-family: "Montserrat";
   background-color: #fff;
 }
