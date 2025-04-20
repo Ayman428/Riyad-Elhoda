@@ -1,5 +1,7 @@
 import Container from "../components/once/Container";
 import Hero from "../components/once/Hero";
+import NewsLetter from "../components/once/NewsLetter";
+import Sponsors from "../components/once/Sponsors";
 import FAQs from "../components/reuse/FAQs";
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
             />
             <Container title="نُنمّي العقول، ونبني المهارات، لنصل بأبنائنا إلى القمة علمًا وخلقًا وتميّزًا" buttonText="سجل معنا الآن" />
             <FAQs />
+            <NewsLetter />
+            <Sponsors />
         </div>
     )
 }
