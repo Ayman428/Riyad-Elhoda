@@ -15,15 +15,15 @@ const Footer = () => {
             <WrapperContainer>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-10 py-10 text-sm md:text-base">
                     <div className="space-y-4">
-                        <img src={Logo} alt="Logo" className="w-28 md:w-32 h-auto" />
-                        <p className="text-white text-opacity-70 leading-relaxed">
+                        <img data-aos="fade-up" src={Logo} alt="Logo" className="w-28 md:w-32 h-auto" />
+                        <p data-aos="fade-right" className="text-white text-opacity-70 leading-relaxed">
                             نشركة مدارس رياض الهدى هي مؤسسة تعليمية رائدة، تسعى إلى تقديم تعليم متميز يرتكز على أسس علمية حديثة ومتطورة. نؤمن بأهمية بناء جيل واعٍ ومبدع، يمتلك المهارات والمعارف التي تؤهله لمواكبة متطلبات العصر،
                         </p>
                     </div>
 
                     <div>
-                        <h3 className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>روابط سريعة</h3>
-                        <ul className="space-y-2 text-white text-opacity-80">
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>روابط سريعة</h3>
+                        <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>الرئيسية</li>
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>عن المدارس</li>
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>فروع المدارس</li>
@@ -31,8 +31,8 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h3 className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>الخصوصية والأمان</h3>
-                        <ul className="space-y-2 text-white text-opacity-80">
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>الخصوصية والأمان</h3>
+                        <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>سياسة الخصوصية</li>
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>شروط الاستخدام</li>
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>التراخيص</li>
@@ -40,8 +40,8 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h3 className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>شبكة مدارس وكليات رياض الهدى</h3>
-                        <ul className="space-y-2 text-white text-opacity-80">
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>شبكة مدارس وكليات رياض الهدى</h3>
+                        <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>شركة رياض الهدى</li>
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>مدارس رياض الفيحـاء</li>
                             <li style={{ color: '#D5D5D5', opacity: 0.3 }}>روضة رياض الهدى 2 - حي الفيحاء</li>
@@ -50,8 +50,8 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h3 className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>تواصل معنا</h3>
-                        <ul className="space-y-2 text-white text-opacity-80">
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>تواصل معنا</h3>
+                        <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
                             <li>example@email.com</li>
                             <li>0123456789</li>
                             <li>الرياض - حي النسيم - شارع الأمير مثال</li>

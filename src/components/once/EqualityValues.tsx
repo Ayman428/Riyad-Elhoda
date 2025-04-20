@@ -18,7 +18,7 @@ const EqualityValues: React.FC = () => {
           {/* Left side - cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full lg:w-1/2">
             {/* Card 1 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <div data-aos="fade-up" className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center mb-4">
                 <Lightbulb className="text-white" size={20} />
               </div>
@@ -27,7 +27,7 @@ const EqualityValues: React.FC = () => {
             </div>
             
             {/* Card 2 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <div data-aos="fade-up" className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center mb-4">
                 <Moon className="text-white" size={20} />
               </div>
@@ -36,7 +36,7 @@ const EqualityValues: React.FC = () => {
             </div>
             
             {/* Card 3 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <div data-aos="fade-up" className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center mb-4">
                 <BarChart3 className="text-white" size={20} />
               </div>
@@ -45,7 +45,7 @@ const EqualityValues: React.FC = () => {
             </div>
             
             {/* Card 4 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <div data-aos="fade-up" className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center mb-4">
                 <Target className="text-white" size={20} />
               </div>

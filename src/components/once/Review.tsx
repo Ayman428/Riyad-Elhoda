@@ -54,7 +54,9 @@ const Reviews: React.FC = () => {
                 label="آراء أولياء الأمور"
                 classPlus="flex justify-center text-center"
             />
-            <p className="text-5xl text-center text-[#071839] mt-6">
+            <p
+                data-aos="fade-up"
+                className="text-5xl text-center text-[#071839] mt-6">
                 نفخر بثقة أولياء الأمور وتقدير طلابنا لما نقدمه من بيئة تعليمية
                 ملهمة وداعمة
             </p>
@@ -116,8 +118,8 @@ const Reviews: React.FC = () => {
                             key={index}
                             onClick={() => handlePageChange(index + 1)}
                             className={`w-2 h-2 mx-1 rounded-full transition ${currentPage === index + 1
-                                    ? "bg-[#071839]"
-                                    : "bg-gray-300"
+                                ? "bg-[#071839]"
+                                : "bg-gray-300"
                                 }`}
                         />
                     ))}

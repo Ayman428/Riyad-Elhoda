@@ -21,7 +21,7 @@ const ContactForm = () => {
 
                     <form className="grid grid-cols-1 md:grid-cols-2 gap-4 text-right">
                         {/* اسم ولي الأمر */}
-                        <div className="form-control">
+                        <div data-aos="fade-right" className="form-control">
                             <label className="block mb-1 font-medium">اسم ولي الأمر</label>
                             <input
                                 type="text"
@@ -31,7 +31,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* اسم الطالب */}
-                        <div className="form-control">
+                        <div data-aos="fade-right" className="form-control">
                             <label className="block mb-1 font-medium">اسم الطالب</label>
                             <input
                                 type="text"
@@ -41,7 +41,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* الصف الدراسي */}
-                        <div className="form-control">
+                        <div data-aos="fade-right" className="form-control">
                             <label className="block mb-1 font-medium">الصف الدراسي</label>
                             <select className="select select-bordered border-black bg-white w-full">
                                 <option disabled selected>
@@ -54,7 +54,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* البريد الإلكتروني */}
-                        <div className="form-control">
+                        <div data-aos="fade-right" className="form-control">
                             <label className="block mb-1 font-medium">البريد الإلكتروني</label>
                             <input
                                 type="email"
@@ -64,7 +64,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* رقم الجوال */}
-                        <div className="form-control md:col-span-2">
+                        <div data-aos="fade-right" className="form-control md:col-span-2">
                             <label className="block mb-1 font-medium">رقم الجوال</label>
                             <input
                                 type="text"
@@ -74,7 +74,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* الموضوع */}
-                        <div className="form-control md:col-span-2">
+                        <div data-aos="fade-right" className="form-control md:col-span-2">
                             <label className="block mb-1 font-medium">الموضوع</label>
                             <input
                                 type="text"
@@ -84,7 +84,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* الرسالة */}
-                        <div className="form-control md:col-span-2">
+                        <div data-aos="fade-right" className="form-control md:col-span-2">
                             <label className="block mb-1 font-medium">الرسالة</label>
                             <textarea
                                 className="textarea textarea-bordered border-black bg-white w-full"
@@ -94,7 +94,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* إرسال */}
-                        <div className="form-control md:col-span-2">
+                        <div data-aos="fade-right" className="form-control md:col-span-2">
                             <button
                                 type="submit"
                                 className="btn w-full bg-[#10357F] text-white hover:bg-[#0c2a66]"
@@ -106,7 +106,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="space-y-4">
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4" data-aos="fade-up">
                         {/* رقم الهاتف */}
                         <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
                             <div className="rounded-full p-3">
@@ -119,7 +119,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* البريد الإلكتروني */}
-                        <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
+                        <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition" data-aos="fade-up">
                             <div className="rounded-full p-3 bg-white">
                                 <MdEmail className="text-2xl text-[#10357F] group-hover:text-[#10357F]" />
                             </div>
@@ -132,7 +132,7 @@ const ContactForm = () => {
                         </div>
 
                         {/* ساعات العمل */}
-                        <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
+                        <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition" data-aos="fade-up">
                             <div className="rounded-full p-3">
                                 <MdLocationOn className="text-2xl text-[#10357F] group-hover:text-white transition" />
                             </div>
@@ -145,7 +145,7 @@ const ContactForm = () => {
                         </div>
                     </div>
 
-                    <div className="flex justify-center gap-3 pt-2">
+                    <div className="flex justify-center gap-3 pt-2" data-aos="fade-up">
                         <a href="#" className="btn btn-circle bg-white btn-sm text-[#10357F] border-[#10357F] hover:bg-[#10357F] hover:text-white">
                             <FaFacebookF />
                         </a>

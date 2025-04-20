@@ -25,6 +25,7 @@ const Sponsors = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center py-6">
                 {paginatedSponsors.map((sponsor) => (
                     <div
+                        data-aos="fade-up"
                         key={sponsor.id}
                         className="w-full h-[240px] flex items-center justify-center"
                     >
@@ -33,7 +34,7 @@ const Sponsors = () => {
                 ))}
             </div>
 
-            <div className="flex items-center justify-center space-x-3 mt-6">
+            <div data-aos="fade-up" className="flex items-center justify-center space-x-3 mt-6">
                 {/* Left Arrow */}
                 <button
                     onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}

@@ -42,11 +42,12 @@ const NewsLetter = () => {
                 />
 
                 <div className="text-center px-4 max-w-2xl flex-1">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-[#071839] mb-6 leading-relaxed">
+                    <h2 data-aos="fade-up" className="text-2xl sm:text-3xl font-bold text-[#071839] mb-6 leading-relaxed">
                         نقدم لكم نشرتنا الإخبارية الشهرية التي تحتوي على أبرز الأخبار والتحديثات المتعلقة بمدرستنا.
                     </h2>
 
                     <form
+                        data-aos="fade-up"
                         onSubmit={handleSubmit}
                         className="flex flex-col sm:flex-row items-center gap-4 justify-center"
                     >

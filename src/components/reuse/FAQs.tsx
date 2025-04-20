@@ -21,7 +21,9 @@ const FAQs = () => {
         <div className="py-16 bg-white text-right">
             <WrapperContainer>
                 <HeaderOne label="الأسئلة الشائعة" classPlus="justify-center" />
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+                <h2
+                    data-aos="fade-up"
+                    className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                     الإجابة على استفساراتك
                 </h2>
 
@@ -30,6 +32,7 @@ const FAQs = () => {
                         const isOpen = openIndex === index;
                         return (
                             <div
+                                data-aos="fade-right"
                                 key={index}
                                 className="border border-[#888888] rounded-lg font-semibold  overflow-hidden bg-white transition-all"
                             >

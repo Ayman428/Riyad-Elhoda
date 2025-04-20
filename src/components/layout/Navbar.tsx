@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="shadow-md fixed top-0 left-0 w-full bg-white z-50">
+    <header className="shadow-md fixed top-0 left-0 w-full bg-white z-[10000]">
       <nav className="container mx-auto flex items-center justify-between h-16 px-4 sm:px-10">
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
           <img src={Logo} alt="logo" className="h-12 w-auto me-6" />
