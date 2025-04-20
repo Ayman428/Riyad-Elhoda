@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Moon, Lightbulb, BarChart3, Target } from 'lucide-react';
+import { Moon, Lightbulb, BarChart3, Target } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const EqualityValues: React.FC = () => {

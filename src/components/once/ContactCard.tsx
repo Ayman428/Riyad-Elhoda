@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Truck, Music } from "lucide-react";
+import { Mail, Phone, MapPin, Music } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 interface ContactCardProps {
   title: string;
@@ -22,7 +22,6 @@ const ContactCard: React.FC<ContactCardProps> = ({
   whatsapp,
   logistics,
   address,
-  mapImageSrc,
   profileImageSrc,
   contactButtonText,
   onContactClick,

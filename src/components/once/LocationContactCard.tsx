@@ -4,7 +4,7 @@ import WrapperContainer from "../reuse/WrapperContainer";
 
 // Example usage
 const LocationContactCard = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const handleContactClick = () => {
     console.log("Contact button clicked");
   };
