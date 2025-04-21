@@ -16,7 +16,7 @@ const AboutAlhuda = () => {
               {data && data?.length > 0 && data[1].title}
             </p>
           </div>
-          <div>{data && data.length > 0 && data[1].text} </div>
+          <div className="text-[#071839]">{data && data.length > 0 && data[1].text} </div>
         </div>
 
         <div className="xl:w-[65%] flex justify-center">
