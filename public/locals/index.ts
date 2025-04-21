@@ -6,3 +6,7 @@ export { default as equalityEn } from "./en/equality.json";
 export { default as equalityAr } from "./ar/equality.json";
 export { default as homeAr } from "./ar/home.json";
 export { default as homeEn } from "./en/home.json";
+export { default as contactAr } from "./ar/contact.json";
+export { default as contactEn } from "./en/contact.json";
+export { default as footerAr } from "./ar/footer.json";
+export { default as footerEn } from "./en/footer.json";

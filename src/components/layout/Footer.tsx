@@ -1,7 +1,10 @@
 import Logo from "/assets/Logo2.png";
 import WrapperContainer from "../reuse/WrapperContainer";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+    const { t } = useTranslation("footer");
+
     return (
         <footer
             className="text-white"
@@ -17,50 +20,58 @@ const Footer = () => {
                     <div className="space-y-4">
                         <img data-aos="fade-up" src={Logo} alt="Logo" className="w-28 md:w-32 h-auto" />
                         <p data-aos="fade-right" className="text-white text-opacity-70 leading-relaxed">
-                            نشركة مدارس رياض الهدى هي مؤسسة تعليمية رائدة، تسعى إلى تقديم تعليم متميز يرتكز على أسس علمية حديثة ومتطورة. نؤمن بأهمية بناء جيل واعٍ ومبدع، يمتلك المهارات والمعارف التي تؤهله لمواكبة متطلبات العصر،
+                            {t("about")}
                         </p>
                     </div>
 
                     <div>
-                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>روابط سريعة</h3>
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>
+                            {t("quickLinks")}
+                        </h3>
                         <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>الرئيسية</li>
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>عن المدارس</li>
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>فروع المدارس</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("home")}</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("aboutUs")}</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("branches")}</li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>الخصوصية والأمان</h3>
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>
+                            {t("privacyAndSecurity")}
+                        </h3>
                         <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>سياسة الخصوصية</li>
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>شروط الاستخدام</li>
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>التراخيص</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("privacyPolicy")}</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("termsOfUse")}</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("licenses")}</li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>شبكة مدارس وكليات رياض الهدى</h3>
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>
+                            {t("network")}
+                        </h3>
                         <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>شركة رياض الهدى</li>
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>مدارس رياض الفيحـاء</li>
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>روضة رياض الهدى 2 - حي الفيحاء</li>
-                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>كليه الفيحاء الاهليه</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("company")}</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("schoolFayhaa")}</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("kindergarten")}</li>
+                            <li style={{ color: '#D5D5D5', opacity: 0.3 }}>{t("college")}</li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>تواصل معنا</h3>
+                        <h3 data-aos="fade-up" className="font-semibold mb-4 text-lg" style={{ color: '#FCFCFC' }}>
+                            {t("contactUs")}
+                        </h3>
                         <ul data-aos="fade-right" className="space-y-2 text-white text-opacity-80">
-                            <li>example@email.com</li>
-                            <li>0123456789</li>
-                            <li>الرياض - حي النسيم - شارع الأمير مثال</li>
+                            <li>{t("email")}</li>
+                            <li>{t("phone")}</li>
+                            <li>{t("address")}</li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-white border-opacity-20 mt-4 pt-4 text-center text-sm text-white text-opacity-60">
-                    جميع الحقوق محفوظة © 2025
+                    {t("copyright")}
                 </div>
             </WrapperContainer>
         </footer>

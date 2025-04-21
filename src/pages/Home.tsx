@@ -28,8 +28,8 @@ const Home = () => {
       </WrapperContainer>
       <Review />
       <Container
-        title="نُنمّي العقول، ونبني المهارات، لنصل بأبنائنا إلى القمة علمًا وخلقًا وتميّزًا"
-        buttonText="سجل معنا الآن"
+        title={t("header:title")}
+        buttonText={t("header:buttonText")}
       />
       <FAQs />
       <NewsLetter />

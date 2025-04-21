@@ -1,105 +1,99 @@
 import { MdPhone, MdLocationOn, MdEmail } from 'react-icons/md';
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import WrapperContainer from '../reuse/WrapperContainer';
+import { useTranslation } from 'react-i18next';
 
 const ContactForm = () => {
+    const { t } = useTranslation("contact");
+
     return (
         <WrapperContainer>
-            <div className="text-lg text-gray-600">
+            <div className="text-lg text-gray-600 mb-8">
                 <p>
-                    <span className="text-[#10357F] font-bold">مدارس رياض الهدى</span> / مدارس رياض الهدى 2 /
-                    برنامج رياض الهدى /
-                    <span className="text-black font-medium"> كليه الفيحاء الاهليه </span>
+                    <span className="text-[#10357F] font-bold">{t("school1")}</span> /
+                    {t("school2")} /
+                    {t("school3")} /
+                    <span className="text-black font-medium">{t("school4")}</span>
                 </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-6 items-start">
+            <div className="grid lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 rounded-lg shadow p-6 text-black">
-                    <h2 className="text-lg font-bold text-[#10357F] mb-4 text-right">
-                        سجل معنا الآن
+                    <h2 className="text-lg font-bold text-[#10357F] mb-4">
+                        {t("form.buttonText")}
                     </h2>
 
-                    <form className="grid grid-cols-1 md:grid-cols-2 gap-4 text-right">
-                        {/* اسم ولي الأمر */}
+                    <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div data-aos="fade-right" className="form-control">
-                            <label className="block mb-1 font-medium">اسم ولي الأمر</label>
+                            <label className="block mb-1 font-medium">{t("form.parentName")}</label>
                             <input
                                 type="text"
-                                placeholder="قم بكتابة اسم ولي الأمر"
+                                placeholder={t("form.parentNamePlaceholder")}
                                 className="input input-bordered border-black bg-white w-full"
                             />
                         </div>
 
-                        {/* اسم الطالب */}
                         <div data-aos="fade-right" className="form-control">
-                            <label className="block mb-1 font-medium">اسم الطالب</label>
+                            <label className="block mb-1 font-medium">{t("form.studentName")}</label>
                             <input
                                 type="text"
-                                placeholder="قم بكتابة اسم الطالب الكامل"
+                                placeholder={t("form.studentNamePlaceholder")}
                                 className="input input-bordered border-black bg-white w-full"
                             />
                         </div>
 
-                        {/* الصف الدراسي */}
                         <div data-aos="fade-right" className="form-control">
-                            <label className="block mb-1 font-medium">الصف الدراسي</label>
+                            <label className="block mb-1 font-medium">{t("form.grade")}</label>
                             <select className="select select-bordered border-black bg-white w-full">
-                                <option disabled selected>
-                                    قم بتحديد الصف الدراسي لطفلك
-                                </option>
+                                <option disabled selected>{t("form.gradePlaceholder")}</option>
                                 <option>الصف الأول</option>
                                 <option>الصف الثاني</option>
                                 <option>الصف الثالث</option>
                             </select>
                         </div>
 
-                        {/* البريد الإلكتروني */}
                         <div data-aos="fade-right" className="form-control">
-                            <label className="block mb-1 font-medium">البريد الإلكتروني</label>
+                            <label className="block mb-1 font-medium">{t("form.email")}</label>
                             <input
                                 type="email"
-                                placeholder="قم بكتابة بريدك الإلكتروني"
+                                placeholder={t("form.emailPlaceholder")}
                                 className="input input-bordered border-black bg-white w-full"
                             />
                         </div>
 
-                        {/* رقم الجوال */}
                         <div data-aos="fade-right" className="form-control md:col-span-2">
-                            <label className="block mb-1 font-medium">رقم الجوال</label>
+                            <label className="block mb-1 font-medium">{t("form.phone")}</label>
                             <input
                                 type="text"
-                                placeholder="قم بكتابة رقم الجوال الخاص بك"
+                                placeholder={t("form.phonePlaceholder")}
                                 className="input input-bordered border-black bg-white w-full"
                             />
                         </div>
 
-                        {/* الموضوع */}
                         <div data-aos="fade-right" className="form-control md:col-span-2">
-                            <label className="block mb-1 font-medium">الموضوع</label>
+                            <label className="block mb-1 font-medium">{t("form.subject")}</label>
                             <input
                                 type="text"
-                                placeholder="أدخل الموضوع المرتبط هنا"
+                                placeholder={t("form.subjectPlaceholder")}
                                 className="input input-bordered border-black bg-white w-full"
                             />
                         </div>
 
-                        {/* الرسالة */}
                         <div data-aos="fade-right" className="form-control md:col-span-2">
-                            <label className="block mb-1 font-medium">الرسالة</label>
+                            <label className="block mb-1 font-medium">{t("form.message")}</label>
                             <textarea
                                 className="textarea textarea-bordered border-black bg-white w-full"
                                 rows={4}
-                                placeholder="قم بكتابة رسالتك هنا..."
+                                placeholder={t("form.messagePlaceholder")}
                             />
                         </div>
 
-                        {/* إرسال */}
                         <div data-aos="fade-right" className="form-control md:col-span-2">
                             <button
                                 type="submit"
                                 className="btn w-full bg-[#10357F] text-white hover:bg-[#0c2a66]"
                             >
-                                إرسال
+                                {t("form.buttonText")}
                             </button>
                         </div>
                     </form>
@@ -113,8 +107,8 @@ const ContactForm = () => {
                                 <MdPhone className="text-2xl text-[#10357F] group-hover:text-white transition" />
                             </div>
                             <div className="mr-4">
-                                <p className="text-sm text-gray-500 group-hover:text-white transition">رقم الهاتف</p>
-                                <p className="font-semibold group-hover:text-white transition">+966 55 123 4567</p>
+                                <p className="text-sm text-gray-500 group-hover:text-white transition">{t("contactInfo.phoneLabel")}</p>
+                                <p className="font-semibold group-hover:text-white transition">{t("contactInfo.phoneNumber")}</p>
                             </div>
                         </div>
 
@@ -124,9 +118,9 @@ const ContactForm = () => {
                                 <MdEmail className="text-2xl text-[#10357F] group-hover:text-[#10357F]" />
                             </div>
                             <div className="mr-4">
-                                <p className="text-sm text-gray-500 group-hover:text-white transition">البريد الإلكتروني</p>
+                                <p className="text-sm text-gray-500 group-hover:text-white transition">{t("contactInfo.emailLabel")}</p>
                                 <p className="font-semibold break-words group-hover:text-white transition">
-                                    info@riyadhalhuda.edu.sa
+                                    {t("contactInfo.emailAddress")}
                                 </p>
                             </div>
                         </div>
@@ -137,23 +131,26 @@ const ContactForm = () => {
                                 <MdLocationOn className="text-2xl text-[#10357F] group-hover:text-white transition" />
                             </div>
                             <div className="mr-4">
-                                <p className="text-sm text-gray-500 group-hover:text-white transition">ساعات العمل</p>
+                                <p className="text-sm text-gray-500 group-hover:text-white transition">{t("contactInfo.workingHours")}</p>
                                 <p className="font-semibold group-hover:text-white transition">
-                                    من الأحد إلى الخميس<br />9:00 AM - 6:00 PM
+                                    {t("contactInfo.workingDays")}<br />{t("contactInfo.workingTime")}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="flex justify-center gap-3 pt-2" data-aos="fade-up">
-                        <a href="#" className="btn btn-circle bg-white btn-sm text-[#10357F] border-[#10357F] hover:bg-[#10357F] hover:text-white">
-                            <FaFacebookF />
+                    <div className="flex justify-around gap-3 pt-2 border border-[#E4E4E4] p-2 rounded-lg" data-aos="fade-up">
+                        <a href="#" className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]">
+                            <FaFacebookF size={20} />
                         </a>
-                        <a href="#" className="btn btn-circle bg-white btn-sm text-[#10357F] border-[#10357F] hover:bg-[#10357F] hover:text-white">
-                            <FaInstagram />
+                        <a href="#" className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]">
+                            <FaInstagram size={20} />
                         </a>
-                        <a href="#" className="btn btn-circle bg-white btn-sm text-[#10357F] border-[#10357F] hover:bg-[#10357F] hover:text-white">
-                            <FaLinkedinIn />
+                        <a href="#" className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]">
+                            <FaLinkedinIn size={20} />
+                        </a>
+                        <a href="#" className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]">
+                            <FaYoutube size={20} />
                         </a>
                     </div>
                 </div>

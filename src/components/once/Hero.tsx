@@ -58,9 +58,9 @@ const Hero: React.FC<HeroProps> = ({
             <WrapperContainer>
                 <div className="flex items-center h-full relative z-10">
                     <div className={`relative z-20 text-white w-full flex flex-col justify-center ${classplus}`}>
-                        <h4 data-aos="fade-right" className="text-lg md:text-xl font-medium uppercase mb-2">{title}</h4>
+                        <h4 data-aos="fade-right" className="text-[#B7CCF6] text-lg md:text-xl font-medium uppercase mb-2">{title}</h4>
                         <h1 data-aos="fade-right" className="text-3xl md:text-5xl font-bold mb-4">{header}</h1>
-                        <p data-aos="fade-right" className="text-base md:text-lg mb-6">{description}</p>
+                        <p data-aos="fade-right" className="text-[#B7CCF6] md:text-lg mb-6">{description}</p>
                         <button data-aos="fade-up" className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]">{i18n.language === "ar" ? "سجل معنا الان" : "Register With Us Now"} {i18n.language === "ar" ?  <IoArrowBack /> : <IoArrowForward />} </button>
                     </div>
                 </div>

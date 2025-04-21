@@ -23,6 +23,7 @@ const useFaqs = (language: string) => {
             });
             return response.data;
         },
+        staleTime: 1000 * 60 * 5,
     });
 };
 

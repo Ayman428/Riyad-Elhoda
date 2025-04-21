@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useNewsletter from "../../hooks/useNewsLetter";
 import WrapperContainer from "../reuse/WrapperContainer";
+import i18n from "../../utils/i18n";
 
 const NewsLetter = () => {
     const [email, setEmail] = useState("");
@@ -43,7 +44,7 @@ const NewsLetter = () => {
 
                 <div className="text-center px-4 max-w-2xl flex-1">
                     <h2 data-aos="fade-up" className="text-2xl sm:text-3xl font-bold text-[#071839] mb-6 leading-relaxed">
-                        نقدم لكم نشرتنا الإخبارية الشهرية التي تحتوي على أبرز الأخبار والتحديثات المتعلقة بمدرستنا.
+                    {i18n.language === "ar" ? "نقدم لكم نشرتنا الإخبارية الشهرية التي تحتوي على أبرز الأخبار والتحديثات المتعلقة بمدرستنا." : "We present to you our monthly newsletter, which contains the most important news and updates related to our school."}
                     </h2>
 
                     <form
@@ -55,15 +56,14 @@ const NewsLetter = () => {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="البريد الإلكتروني"
+                            placeholder={i18n.language === "ar" ? "البريد الإلكتروني" : "Email Address"}
                             className="rounded-full px-6 py-3 border border-gray-300 w-full text-black sm:w-[400px] focus:outline-none"
-                            dir="rtl"
                         />
                         <button
                             type="submit"
                             className="bg-[#071839] text-white px-6 py-3 rounded-full hover:bg-[#071839] transition"
                         >
-                            إشترك الآن
+                            {i18n.language === "ar" ? "إشترك الآن" : "Subscribe"}
                         </button>
                     </form>
 

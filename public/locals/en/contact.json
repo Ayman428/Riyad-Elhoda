@@ -1,0 +1,32 @@
+{
+    "school1": "Riyadh Al-Huda Schools",
+    "school2": "Riyadh Al-Huda Schools 2",
+    "school3": "Riyadh Al-Huda Program",
+    "school4": "Al-Fayhaa Private College",
+    "form": {
+        "buttonText": "Register with us now",
+        "parentName": "Parent's Name",
+        "parentNamePlaceholder": "Enter the parent's full name",
+        "studentName": "Student's Name",
+        "studentNamePlaceholder": "Enter the student's full name",
+        "grade": "Grade",
+        "gradePlaceholder": "Select your child's grade",
+        "email": "Email Address",
+        "emailPlaceholder": "Enter your email address",
+        "phone": "Mobile Number",
+        "phonePlaceholder": "Enter your mobile number",
+        "subject": "Subject",
+        "subjectPlaceholder": "Enter the related subject here",
+        "message": "Message",
+        "messagePlaceholder": "Write your message here..."
+    },
+    "contactInfo": {
+        "phoneLabel": "Phone Number",
+        "phoneNumber": "+966 55 123 4567",
+        "emailLabel": "Email",
+        "emailAddress": "info@riyadhalhuda.edu.sa",
+        "workingHours": "Working Hours",
+        "workingDays": "Sunday to Thursday",
+        "workingTime": "9:00 AM - 6:00 PM"
+    }
+}

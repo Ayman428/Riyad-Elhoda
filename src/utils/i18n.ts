@@ -9,6 +9,10 @@ import {
   equalityAr,
   homeAr,
   homeEn,
+  footerAr,
+  footerEn,
+  contactAr,
+  contactEn
 } from "../../public/locals";
 
 const resources = {
@@ -17,12 +21,16 @@ const resources = {
     navbar: navbarEn,
     equality: equalityEn,
     home: homeEn,
+    footer: footerEn,
+    contact: contactEn,
   },
   ar: {
     header: headerAr,
     navbar: navbarAr,
     equality: equalityAr,
     home: homeAr,
+    footer: footerAr,
+    contact: contactAr,
   },
 } as const;
 

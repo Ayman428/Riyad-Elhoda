@@ -8,11 +8,13 @@ import i18n from "../../utils/i18n";
 import WrapperContainer from "../reuse/WrapperContainer";
 import useReviews from "../../hooks/useReview";
 import HeaderOne from "../shared/HeaderOne";
+import { useTranslation } from "react-i18next";
 
 const Reviews: React.FC = () => {
     const { data, isError, error, isLoading } = useReviews();
     const [currentPage, setCurrentPage] = useState(1);
     const reviewsPerPage = 3;
+    const { t } = useTranslation();
 
     const reviews = data?.data ?? [];
 
@@ -51,14 +53,13 @@ const Reviews: React.FC = () => {
     return (
         <WrapperContainer>
             <HeaderOne
-                label="آراء أولياء الأمور"
+                label={t("header:parentFeedbackTitle")}
                 classPlus="flex justify-center text-center"
             />
             <p
                 data-aos="fade-up"
                 className="text-5xl text-center text-[#071839] mt-6">
-                نفخر بثقة أولياء الأمور وتقدير طلابنا لما نقدمه من بيئة تعليمية
-                ملهمة وداعمة
+                {t("header:parentFeedbackDescription")}
             </p>
 
             <div className="relative mt-10">

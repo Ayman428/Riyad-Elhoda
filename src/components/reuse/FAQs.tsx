@@ -3,10 +3,12 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import useFaqs from "../../hooks/useFAQs";
 import WrapperContainer from "./WrapperContainer";
 import HeaderOne from "../shared/HeaderOne";
+import { useTranslation } from "react-i18next";
 
 const FAQs = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const { data, isLoading, error } = useFaqs("ar");
+    const { t } = useTranslation();
 
     if (isLoading) return <div className="text-center py-10">جارٍ التحميل...</div>;
     if (error) return <div className="text-center text-red-500 py-10">حدث خطأ أثناء جلب البيانات</div>;
@@ -20,11 +22,11 @@ const FAQs = () => {
     return (
         <div className="py-16 bg-white text-right">
             <WrapperContainer>
-                <HeaderOne label="الأسئلة الشائعة" classPlus="justify-center" />
+                <HeaderOne label={t("header:faqTitle")} classPlus="justify-center" />
                 <h2
                     data-aos="fade-up"
                     className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                    الإجابة على استفساراتك
+                    {t("header:faqDescription")}
                 </h2>
 
                 <div className="space-y-4">
