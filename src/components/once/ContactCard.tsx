@@ -46,14 +46,15 @@ const ContactCard: React.FC<ContactCardProps> = ({
           src={profileImageSrc}
           alt="Profile"
           className="w-14 h-14  object-cover self-end my-2 "
+          data-aos="fade-left"
         />
         {/* Title */}
-        <h2 className="text-xl font-bold text-gray-800 text-right rtl:text-left mb-2 border-b pb-2">
+        <h2 data-aos="fade-left" className="text-xl font-bold text-gray-800 text-right rtl:text-left mb-2 border-b pb-2">
           {title}
         </h2>
 
         {/* Description */}
-        <div className="text-right rtl:text-left text-sm text-[#888888] mb-4 font-semibold">
+        <div data-aos="fade-left" className="text-right rtl:text-left text-sm text-[#888888] mb-4 font-semibold">
           {description.map((paragraph, index) => (
             <p key={index} className="mb-2">
               {paragraph}
@@ -62,7 +63,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
         </div>
 
         {/* Profile Image and Contact Info */}
-        <div className="mt-auto">
+        <div data-aos="fade-left" className="mt-auto">
           {/* Contact Details */}
           <div className="space-y-2 text-black">
             <div className="flex justify-end items-center gap-2">
@@ -92,7 +93,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
           </div>
 
           {/* Contact Button */}
-          <div className="mt-4">
+          <div data-aos="fade-up" className="mt-4">
             <button
               onClick={onContactClick}
               className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition"
