@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin, Music } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 interface ContactCardProps {
   title: string;
-  description: string[];
+  description: string;
   email: string;
   phone: string;
   whatsapp: string;
@@ -11,6 +11,8 @@ interface ContactCardProps {
   mapImageSrc: string;
   profileImageSrc: string;
   contactButtonText: string;
+  lat: string;
+  lng: string;
   onContactClick?: () => void;
 }
 
@@ -24,6 +26,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
   address,
   profileImageSrc,
   contactButtonText,
+  lat,
+  lng,
   onContactClick,
 }) => {
   return (
@@ -31,7 +35,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
       {/* Map Section */}
       <div className="w-full h-[720px] relative rounded-xl overflow-hidden p-4">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.2367231407486!2d46.67529507535348!3d24.7135512780637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f038f06b2a6ef%3A0xf4f7c0f9a87dfb11!2sRiyadh!5e0!3m2!1sen!2ssa!4v1713433506192!5m2!1sen!2ssa"
+          src={`https://maps.google.com/maps?q=${lat},${lng}&z=14&output=embed`}
+          // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.2367231407486!2d46.67529507535348!3d24.7135512780637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f038f06b2a6ef%3A0xf4f7c0f9a87dfb11!2sRiyadh!5e0!3m2!1sen!2ssa!4v1713433506192!5m2!1sen!2ssa"
           className="w-full h-full"
           style={{ border: 0 }}
           allowFullScreen
@@ -49,17 +54,19 @@ const ContactCard: React.FC<ContactCardProps> = ({
           data-aos="fade-left"
         />
         {/* Title */}
-        <h2 data-aos="fade-left" className="text-xl font-bold text-gray-800 text-right rtl:text-left mb-2 border-b pb-2">
+        <h2
+          data-aos="fade-left"
+          className="text-xl font-bold text-gray-800 text-right rtl:text-left mb-2 border-b pb-2"
+        >
           {title}
         </h2>
 
         {/* Description */}
-        <div data-aos="fade-left" className="text-right rtl:text-left text-sm text-[#888888] mb-4 font-semibold">
-          {description.map((paragraph, index) => (
-            <p key={index} className="mb-2">
-              {paragraph}
-            </p>
-          ))}
+        <div
+          data-aos="fade-left"
+          className="text-right rtl:text-left text-sm text-[#888888] mb-4 font-semibold"
+        >
+          <p className="mb-2">{description}</p>
         </div>
 
         {/* Profile Image and Contact Info */}

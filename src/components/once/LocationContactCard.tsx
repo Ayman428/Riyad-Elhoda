@@ -1,9 +1,12 @@
 import { useTranslation } from "react-i18next";
 import ContactCard from "./ContactCard";
 import WrapperContainer from "../reuse/WrapperContainer";
+import { useFetchSchoolBranches } from "../../hooks/useFetchSchoolBranches";
 
 // Example usage
 const LocationContactCard = () => {
+  const { data } = useFetchSchoolBranches();
+
   const { t } = useTranslation();
   const handleContactClick = () => {
     console.log("Contact button clicked");
@@ -12,24 +15,35 @@ const LocationContactCard = () => {
   return (
     <WrapperContainer>
       <div className="flex flex-col gap-8">
-        <ContactCard
-          title={t(`equality:en.riyadhAlHuda.title`)}
-          description={
-            t(`equality:en.riyadhAlHuda.description`, {
-              returnObjects: true,
-            }) as string[]
-          }
-          email="info@riyadhalhuda.edu.sa"
-          phone="0133500141"
-          whatsapp="0530841681 الروضة"
-          logistics="0534014180 : المتوسط والثانوي"
-          address={t(`equality:en.riyadhAlHuda.address`)}
-          mapImageSrc="../../../public/assets/map.png"
-          profileImageSrc="../../../public/assets/profile.png"
-          contactButtonText={t(`equality:en.contactButtonText`)}
-          onContactClick={handleContactClick}
-        />
-        <ContactCard
+        {data &&
+          data.slice(1).map((branch, index) => (
+            <ContactCard
+              key={index + 1} // index + 1 to reflect actual position in original array
+              title={branch.title}
+              description={branch.notes}
+              email={branch.email}
+              phone={
+                (branch.phones &&
+                  branch.phones.phones?.filter(Boolean).join(" - ")) ||
+                ""
+              }
+              whatsapp={
+                (branch.phones &&
+                  branch.phones.mobiles?.filter(Boolean).join(" - ")) ||
+                ""
+              }
+              logistics="0534014180 : المتوسط والثانوي"
+              address={branch.address}
+              mapImageSrc="../../../public/assets/map.png"
+              profileImageSrc="../../../public/assets/profile.png"
+              contactButtonText={t(`equality:en.contactButtonText`)}
+              lat={branch.lat}
+              lng={branch.long}
+              onContactClick={handleContactClick}
+            />
+          ))}
+
+        {/* <ContactCard
           title={t(`equality:en.riyadhAlFayhaa.title`)}
           description={
             t(`equality:en.riyadhAlFayhaa.description`, {
@@ -44,42 +58,10 @@ const LocationContactCard = () => {
           mapImageSrc="../../../public/assets/map.png"
           profileImageSrc="../../../public/assets/profile.png"
           contactButtonText={t(`equality:en.contactButtonText`)}
+          lat={30.056554}
+          lng={31.363681}
           onContactClick={handleContactClick}
-        />
-        <ContactCard
-          title={t(`equality:en.riyadhAlHudaKindergarten.title`)}
-          description={
-            t(`equality:en.riyadhAlHudaKindergarten.description`, {
-              returnObjects: true,
-            }) as string[]
-          }
-          email="55778@estg.moe.gov.sa"
-          phone="013488888"
-          whatsapp="0531949515"
-          logistics="0534014180"
-          address={t(`equality:en.riyadhAlHudaKindergarten.address`)}
-          mapImageSrc="../../../public/assets/map.png"
-          profileImageSrc="../../../public/assets/profile.png"
-          contactButtonText={t(`equality:en.contactButtonText`)}
-          onContactClick={handleContactClick}
-        />
-        <ContactCard
-          whatsapp="0531949515"
-          logistics="0534014180"
-          title={t(`equality:en.alFayhaaCollege.title`)}
-          description={
-            t(`equality:en.alFayhaaCollege.description`, {
-              returnObjects: true,
-            }) as string[]
-          }
-          email="info@riyadhalhuda.edu.sa"
-          phone="+966-566-651-32"
-          address={t(`equality:en.alFayhaaCollege.address`)}
-          mapImageSrc="../../../public/assets/map.png"
-          profileImageSrc="../../../public/assets/profile.png"
-          contactButtonText={t(`equality:en.contactButtonText`)}
-          onContactClick={handleContactClick}
-        />
+        /> */}
       </div>
     </WrapperContainer>
   );
