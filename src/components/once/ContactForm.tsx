@@ -9,6 +9,8 @@ import WrapperContainer from "../reuse/WrapperContainer";
 import { useTranslation } from "react-i18next";
 import { useFetchSchoolBranches } from "../../hooks/useFetchSchoolBranches";
 import { useEffect, useState } from "react";
+import useContactForm from "../../hooks/useContactForm";
+import "aos/dist/aos.css";
 
 interface PhoneNumbers {
   phones?: (string | null)[];
@@ -17,7 +19,7 @@ interface PhoneNumbers {
 
 interface SocialMediaLinks {
   facebook?: string;
-  x?: string; // Twitter
+  x?: string;
   tiktok?: string;
   linkedin?: string;
   instagram?: string;
@@ -37,14 +39,45 @@ const ContactForm = () => {
   const { t } = useTranslation("contact");
   const { data } = useFetchSchoolBranches();
   const [selectedBranch, setSelectedBranch] = useState<schoolData | null>(null);
+  const [formKey, setFormKey] = useState(0);
+  const { mutate, isError, error } = useContactForm();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    student_name: "",
+    last_name: "_",
+    class: "",
+    level: "",
+    message: "",
+  });
+
   useEffect(() => {
     if (data && data.length > 0) {
       setSelectedBranch(data[1]);
     }
   }, [data]);
 
+  const handleFormChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    mutate(formData);
+  };
+
   const handleBranchClick = (branch: schoolData) => {
     setSelectedBranch(branch);
+    setFormKey((prev) => prev + 1);
   };
 
   return (
@@ -72,21 +105,31 @@ const ContactForm = () => {
             })}
         </div>
       </div>
-
       <div className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 rounded-lg shadow p-6 text-black">
+        <div
+          key={formKey}
+          data-aos="fade-right"
+          className="lg:col-span-2 rounded-lg shadow p-6 text-black"
+        >
           <h2 className="text-lg font-bold text-[#10357F] mb-4">
             {t("form.buttonText")}
           </h2>
 
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            onSubmit={handleSubmit}
+          >
             <div data-aos="fade-right" className="form-control">
               <label className="block mb-1 font-medium">
                 {t("form.parentName")}
               </label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                required
                 placeholder={t("form.parentNamePlaceholder")}
+                onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
             </div>
@@ -97,7 +140,11 @@ const ContactForm = () => {
               </label>
               <input
                 type="text"
+                name="student_name"
+                value={formData.student_name}
+                required
                 placeholder={t("form.studentNamePlaceholder")}
+                onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
             </div>
@@ -106,11 +153,25 @@ const ContactForm = () => {
               <label className="block mb-1 font-medium">
                 {t("form.grade")}
               </label>
-              <select className="select select-bordered border-black bg-white w-full">
-                <option disabled>{t("form.gradePlaceholder")}</option>
-                <option>الصف الأول</option>
-                <option>الصف الثاني</option>
-                <option>الصف الثالث</option>
+              <select
+                className="select select-bordered border-black bg-white w-full"
+                name="class"
+                value={formData.class}
+                required
+                onChange={handleFormChange}
+              >
+                <option value="" disabled hidden>
+                  {t("form.gradePlaceholder")}
+                </option>
+                <option value={t("contact:grades.firstgrade")}>
+                  {t("contact:grades.firstgrade")}
+                </option>
+                <option value={t("contact:grades.secondgrade")}>
+                  {t("contact:grades.secondgrade")}
+                </option>
+                <option value={t("contact:grades.thirdgrade")}>
+                  {t("contact:grades.thirdgrade")}
+                </option>
               </select>
             </div>
 
@@ -121,6 +182,10 @@ const ContactForm = () => {
               <input
                 type="email"
                 placeholder={t("form.emailPlaceholder")}
+                name="email"
+                value={formData.email}
+                required
+                onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
             </div>
@@ -132,6 +197,10 @@ const ContactForm = () => {
               <input
                 type="text"
                 placeholder={t("form.phonePlaceholder")}
+                name="phone"
+                value={formData.phone}
+                required
+                onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
             </div>
@@ -143,6 +212,10 @@ const ContactForm = () => {
               <input
                 type="text"
                 placeholder={t("form.subjectPlaceholder")}
+                name="level"
+                value={formData.level}
+                required
+                onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
             </div>
@@ -154,6 +227,10 @@ const ContactForm = () => {
               <textarea
                 className="textarea textarea-bordered border-black bg-white w-full"
                 rows={4}
+                name="message"
+                value={formData.message}
+                required
+                onChange={handleFormChange}
                 placeholder={t("form.messagePlaceholder")}
               />
             </div>
@@ -167,11 +244,17 @@ const ContactForm = () => {
               </button>
             </div>
           </form>
+          {isError ? (
+            <div className="p-2.5 text-center bg-red-100 mt-3">
+              <p className="text-red-800">{error.message}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
 
         <div className="space-y-4">
           <div className="flex flex-col gap-4" data-aos="fade-up">
-            {/* رقم الهاتف */}
             <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
               <div className="rounded-full p-3">
                 <MdPhone className="text-2xl text-[#10357F] group-hover:text-white transition" />
@@ -180,18 +263,13 @@ const ContactForm = () => {
                 <p className="text-sm text-gray-500 group-hover:text-white transition">
                   {t("contactInfo.phoneLabel")}
                 </p>
-
                 <p className="font-semibold group-hover:text-white transition">
                   {selectedBranch && selectedBranch.phones?.phones?.[0]}
                 </p>
               </div>
             </div>
 
-            {/* البريد الإلكتروني */}
-            <div
-              className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition"
-              data-aos="fade-up"
-            >
+            <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
               <div className="rounded-full p-3 bg-white">
                 <MdEmail className="text-2xl text-[#10357F] group-hover:text-[#10357F]" />
               </div>
@@ -205,11 +283,7 @@ const ContactForm = () => {
               </div>
             </div>
 
-            {/* ساعات العمل */}
-            <div
-              className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition"
-              data-aos="fade-up"
-            >
+            <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
               <div className="rounded-full p-3">
                 <MdLocationOn className="text-2xl text-[#10357F] group-hover:text-white transition" />
               </div>

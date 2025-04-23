@@ -1,32 +1,37 @@
 {
-    "school1": "مدارس رياض الهدى",
-    "school2": "مدارس رياض الهدى 2",
-    "school3": "برنامج رياض الهدى",
-    "school4": "كليه الفيحاء الاهليه",
-    "form": {
-        "buttonText": "سجل معنا الآن",
-        "parentName": "اسم ولي الأمر",
-        "parentNamePlaceholder": "قم بكتابة اسم ولي الأمر",
-        "studentName": "اسم الطالب",
-        "studentNamePlaceholder": "قم بكتابة اسم الطالب الكامل",
-        "grade": "الصف الدراسي",
-        "gradePlaceholder": "قم بتحديد الصف الدراسي لطفلك",
-        "email": "البريد الإلكتروني",
-        "emailPlaceholder": "قم بكتابة بريدك الإلكتروني",
-        "phone": "رقم الجوال",
-        "phonePlaceholder": "قم بكتابة رقم الجوال الخاص بك",
-        "subject": "الموضوع",
-        "subjectPlaceholder": "أدخل الموضوع المرتبط هنا",
-        "message": "الرسالة",
-        "messagePlaceholder": "قم بكتابة رسالتك هنا..."
-    },
-    "contactInfo": {
-        "phoneLabel": "رقم الهاتف",
-        "phoneNumber": "+966 55 123 4567",
-        "emailLabel": "البريد الإلكتروني",
-        "emailAddress": "info@riyadhalhuda.edu.sa",
-        "workingHours": "ساعات العمل",
-        "workingDays": "من الأحد إلى الخميس",
-        "workingTime": "9:00 AM - 6:00 PM"
-    }
+  "school1": "مدارس رياض الهدى",
+  "school2": "مدارس رياض الهدى 2",
+  "school3": "برنامج رياض الهدى",
+  "school4": "كليه الفيحاء الاهليه",
+  "form": {
+    "buttonText": "سجل معنا الآن",
+    "parentName": "اسم ولي الأمر",
+    "parentNamePlaceholder": "قم بكتابة اسم ولي الأمر",
+    "studentName": "اسم الطالب",
+    "studentNamePlaceholder": "قم بكتابة اسم الطالب الكامل",
+    "grade": "الصف الدراسي",
+    "gradePlaceholder": "قم بتحديد الصف الدراسي لطفلك",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "قم بكتابة بريدك الإلكتروني",
+    "phone": "رقم الجوال",
+    "phonePlaceholder": "قم بكتابة رقم الجوال الخاص بك",
+    "subject": "الموضوع",
+    "subjectPlaceholder": "أدخل الموضوع المرتبط هنا",
+    "message": "الرسالة",
+    "messagePlaceholder": "قم بكتابة رسالتك هنا..."
+  },
+  "contactInfo": {
+    "phoneLabel": "رقم الهاتف",
+    "phoneNumber": "+966 55 123 4567",
+    "emailLabel": "البريد الإلكتروني",
+    "emailAddress": "info@riyadhalhuda.edu.sa",
+    "workingHours": "ساعات العمل",
+    "workingDays": "من الأحد إلى الخميس",
+    "workingTime": "9:00 AM - 6:00 PM"
+  },
+  "grades": {
+    "firstgrade": "الصف الأول",
+    "secondgrade": "الصف الثاني",
+    "thirdgrade": "الصف الثالث"
+  }
 }
