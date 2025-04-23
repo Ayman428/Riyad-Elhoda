@@ -80,7 +80,7 @@ const Footer = () => {
               {data &&
                 data.slice(1).map((branch, index) => (
                   <li key={index} style={{ color: "#D5D5D5", opacity: 0.3 }}>
-                    {branch.title}
+                    <Link to={`/school-branch/#${index}`}>{branch.title}</Link>
                   </li>
                 ))}
             </ul>
