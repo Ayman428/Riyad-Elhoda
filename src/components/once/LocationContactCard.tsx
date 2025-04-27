@@ -19,7 +19,7 @@ const LocationContactCard = () => {
       <div className="flex flex-col gap-8">
         {data &&
           data.slice(1).map((branch, index) => (
-            <div id={`${index}`}>
+            <div id={`${index}`} key={index}>
               <ContactCard
                 key={index + 1} // index + 1 to reflect actual position in original array
                 title={branch.title}
