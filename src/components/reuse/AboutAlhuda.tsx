@@ -1,5 +1,4 @@
 import WrapperContainer from "./WrapperContainer";
-import HeaderOne from "../shared/HeaderOne";
 import GroupedIMG from "../../../public/assets/aboutGrouped.png";
 import elipsesLG from "../../../public/assets/Ellipse 6.png";
 import { useFetchAboutSchools } from "../../hooks/useFetchAboutSchools";
@@ -11,12 +10,13 @@ const AboutAlhuda = () => {
       <div className=" w-full mb-14 mt-14 xl:flex items-center">
         <div className="xl:w-[45%] mb-2">
           <div>
-            {data && data.length > 0 && <HeaderOne label={data[0].name} />}
             <p className="text-[#071839] text-5xl font-bold mb-4 w-[90%] mt-1.5">
               {data && data?.length > 0 && data[1].title}
             </p>
           </div>
-          <div className="text-[#071839]">{data && data.length > 0 && data[1].text} </div>
+          <div className="text-[#071839]">
+            {data && data.length > 0 && data[1].text}{" "}
+          </div>
         </div>
 
         <div className="xl:w-[65%] flex justify-center">

@@ -1,84 +1,112 @@
-import React, { useState, useEffect } from 'react';
-import WrapperContainer from '../reuse/WrapperContainer';
+import React, { useState, useEffect } from "react";
+import WrapperContainer from "../reuse/WrapperContainer";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
-import i18n from '../../utils/i18n';
+import i18n from "../../utils/i18n";
 
 interface HeroProps {
-    backgroundImage: string;
-    title: string;
-    header?: string;
-    description: string;
-    classplus: string,
-    isHomePage?: boolean;
+  backgroundImage: string;
+  title: string;
+  header?: string;
+  description: string;
+  classplus: string;
+  isHomePage?: boolean;
 }
 
 const sliderImages = [
-    '/assets/HeroBg.png',
-    '/assets/HeroBg1.png',
-    '/assets/HeroBg2.png',
-    '/assets/HeroBg3.png',
+  "/assets/HeroBg.png",
+  "/assets/HeroBg1.png",
+  "/assets/HeroBg2.png",
+  "/assets/HeroBg3.png",
 ];
 
 const Hero: React.FC<HeroProps> = ({
-    backgroundImage,
-    title,
-    header,
-    description,
-    classplus,
-    isHomePage = false,
+  backgroundImage,
+  title,
+  header,
+  description,
+  classplus,
+  isHomePage = false,
 }) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-    useEffect(() => {
-        if (isHomePage) {
-            const interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
-            }, 4000);
-            return () => clearInterval(interval);
-        }
-    }, [isHomePage]);
+  useEffect(() => {
+    if (isHomePage) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [isHomePage]);
 
-    const activeBackground = isHomePage ? sliderImages[currentSlide] : backgroundImage;
+  const activeBackground = isHomePage
+    ? sliderImages[currentSlide]
+    : backgroundImage;
 
-    return (
-        <div
-            className={`relative bg-cover bg-center w-full ${isHomePage ? 'h-[800px]' : 'h-[500px]'}`}
-            style={{
-                backgroundImage: `url(${activeBackground})`,
-            }}
-        >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#10357F]/50 to-[#10357F]"></div>
+  return (
+    <div
+      className={`relative bg-cover bg-center w-full ${
+        isHomePage ? "h-[800px]" : "h-[500px]"
+      }`}
+      style={{
+        backgroundImage: `url(${activeBackground})`,
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-[#10357F]/50 to-[#10357F]"></div>
 
-            <img
-                src="/public/assets/DecorativeVector.png"
-                alt="Vector"
-                className={`absolute right-0 top-0 h-full object-cover z-10`}
-            />
+      <img
+        src="/public/assets/DecorativeVector.png"
+        alt="Vector"
+        className={`absolute right-0 top-0 h-full object-cover z-10`}
+      />
 
-            <WrapperContainer>
-                <div className="flex items-center h-full relative z-10">
-                    <div className={`relative z-20 text-white w-full flex flex-col justify-center ${classplus}`}>
-                        <h4 data-aos="fade-right" className="text-[#B7CCF6] text-lg md:text-xl font-medium uppercase mb-2">{title}</h4>
-                        <h1 data-aos="fade-right" className="text-3xl md:text-5xl font-bold mb-4">{header}</h1>
-                        <p data-aos="fade-right" className="text-[#B7CCF6] md:text-lg mb-6">{description}</p>
-                        <button data-aos="fade-up" className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]">{i18n.language === "ar" ? "سجل معنا الان" : "Register With Us Now"} {i18n.language === "ar" ?  <IoArrowBack /> : <IoArrowForward />} </button>
-                    </div>
-                </div>
-            </WrapperContainer>
-
-            {isHomePage && (
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-3">
-                    {sliderImages.map((_, index) => (
-                        <div
-                            key={index}
-                            className={`w-3 h-3 rounded-full cursor-pointer ${currentSlide === index ? 'bg-white' : 'bg-white/50'}`}
-                            onClick={() => setCurrentSlide(index)}
-                        />
-                    ))}
-                </div>
-            )}
+      <WrapperContainer>
+        <div className="flex items-center h-full relative z-10">
+          <div
+            className={`relative z-20 text-white w-full flex flex-col justify-center ${classplus}`}
+          >
+            <h4
+              //   data-aos="fade-right"
+              className="text-4xl md:text-7xl font-bold text-white uppercase mb-6"
+            >
+              {title}
+            </h4>
+            <h1
+              //   data-aos="fade-right"
+              className="text-4xl md:text-5xl font-bold mb-4 text-[#B7CCF6]"
+            >
+              {header}
+            </h1>
+            <p data-aos="fade-right" className="text-[#B7CCF6] md:text-lg mb-6">
+              {description}
+            </p>
+            <button
+              data-aos="fade-up"
+              className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]"
+            >
+              {i18n.language === "ar"
+                ? "سجل معنا الان"
+                : "Register With Us Now"}{" "}
+              {i18n.language === "ar" ? <IoArrowBack /> : <IoArrowForward />}{" "}
+            </button>
+          </div>
         </div>
-    );
+      </WrapperContainer>
+
+      {isHomePage && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-3">
+          {sliderImages.map((_, index) => (
+            <div
+              key={index}
+              className={`w-3 h-3 rounded-full cursor-pointer ${
+                currentSlide === index ? "bg-white" : "bg-white/50"
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Hero;

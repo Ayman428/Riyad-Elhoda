@@ -1,12 +1,18 @@
 import { Mail, Phone, MapPin, Music } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+interface PhoneData {
+  text: string;
+  phone: string;
+}
+
 interface ContactCardProps {
   title: string;
   description: string;
   email: string;
-  phone: string;
-  whatsapp: string;
-  logistics: string;
+  phone1?: PhoneData | null;
+  phone2?: PhoneData | null;
+  phone3?: PhoneData | null;
+  whatsapp?: PhoneData | null;
   address: string;
   mapImageSrc: string;
   profileImageSrc: string;
@@ -20,9 +26,10 @@ const ContactCard: React.FC<ContactCardProps> = ({
   title,
   description,
   email,
-  phone,
+  phone1,
+  phone2,
   whatsapp,
-  logistics,
+  phone3,
   address,
   profileImageSrc,
   contactButtonText,
@@ -65,20 +72,41 @@ const ContactCard: React.FC<ContactCardProps> = ({
               <span className="text-sm">{email}</span>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Phone size={16} className="text-gray-700" />
-              <span className="text-sm">{phone}</span>
-            </div>
+            {phone1 && (
+              <div className="flex items-center gap-2 ">
+                <Phone size={16} className="text-gray-700" />
+                <span className="text-sm rtl:text-left">
+                  {phone1.text}: {phone1.phone}
+                </span>
+              </div>
+            )}
 
-            <div className="flex items-center gap-2">
-              <FaWhatsapp className="w-4 h-4" />
-              <span className="text-sm">{whatsapp}</span>
-            </div>
+            {phone2 && (
+              <div className="flex items-center gap-2">
+                <Phone size={16} className="text-gray-700" />
+                <span className="text-sm rtl:text-left">
+                  {phone2.text}: {phone2.phone}
+                </span>
+              </div>
+            )}
 
-            <div className="flex items-center gap-2">
-              <Music size={16} className="text-gray-700" />
-              <span className="text-sm">{logistics}</span>
-            </div>
+            {whatsapp && (
+              <div className="flex items-center gap-2">
+                <FaWhatsapp className="w-4 h-4" />
+                <span className="text-sm rtl:text-left">
+                  {whatsapp.text}: {whatsapp.phone}
+                </span>
+              </div>
+            )}
+
+            {phone3 && (
+              <div className="flex items-center gap-2">
+                <Music size={16} className="text-gray-700" />
+                <span className="text-sm rtl:text-left">
+                  {phone3.text}: {phone3.phone}
+                </span>
+              </div>
+            )}
 
             <div className="flex items-center gap-2">
               <MapPin size={16} className="text-gray-700" />

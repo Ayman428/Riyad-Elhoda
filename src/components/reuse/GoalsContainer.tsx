@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import image from "../../../public/assets/DecorativeVectors2.png";
 import { useFetchAboutSchools } from "../../hooks/useFetchAboutSchools";
 import SchoolGoalCard from "./SchoolGoalCard";
+import HeaderOne from "../shared/HeaderOne";
 
 const GoalsContainer = () => {
   const { data } = useFetchAboutSchools();
@@ -20,6 +21,11 @@ const GoalsContainer = () => {
         />
 
         <div className="w-[90%] m-auto mt-3">
+          <HeaderOne
+            label={t("home:goals.sub_title")}
+            classPlus="flex justify-center my-2 "
+            fontSize="35px"
+          />
           <p className="text-white text-2xl xl:text-4xl font-bold text-center">
             {t("home:goals.title")}
           </p>

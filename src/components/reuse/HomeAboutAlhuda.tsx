@@ -1,7 +1,5 @@
-import HeaderOne from "../shared/HeaderOne";
 import AboutAlhuda from "../../../public/assets/AboutAlhudaIMG.png";
 import elipsesLG from "../../../public/assets/Ellipse 6.png";
-import aboutIcon from "../../../public/icons/Vector.png";
 import NavigationButton from "./NavigationButton";
 import { useFetchAboutSchools } from "../../hooks/useFetchAboutSchools";
 import { useTranslation } from "react-i18next";
@@ -14,14 +12,6 @@ const HomeAboutAlhuda = () => {
       <div className=" w-full mb-14 mt-14 xl:flex items-center">
         <div className="xl:w-[45%] mb-2">
           <div>
-            <div className="flex items-center">
-              <img
-                className="w-[20px] h-[20px] ml-2 mb-[6px]"
-                src={aboutIcon}
-                alt="aboutIcon"
-              />
-              {data && <HeaderOne label={data[0].name} />}
-            </div>
             <p className="text-[#071839] text-5xl font-bold mb-4 w-[90%] mt-1.5">
               {data && data[0].title}
             </p>

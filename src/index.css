@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -21,6 +20,7 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: "Montserrat", sans-serif;
   background-color: #fff;
   overflow-x: hidden;
 }

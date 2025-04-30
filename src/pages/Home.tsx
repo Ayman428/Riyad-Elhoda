@@ -30,6 +30,7 @@ const Home = () => {
       <Container
         title={t("header:title")}
         buttonText={t("header:buttonText")}
+        fontSize="45px"
       />
       <FAQs />
       <NewsLetter />
