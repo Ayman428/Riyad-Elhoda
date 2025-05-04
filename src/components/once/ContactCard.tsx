@@ -1,5 +1,7 @@
-import { Mail, Phone, MapPin, Music } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { TiLocation } from "react-icons/ti";
+import { MdLocalPhone } from "react-icons/md";
+import { RiWhatsappFill } from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
 interface PhoneData {
   text: string;
   phone: string;
@@ -68,14 +70,14 @@ const ContactCard: React.FC<ContactCardProps> = ({
           {/* Contact Details */}
           <div className="space-y-2 text-black">
             <div className="flex items-center gap-2">
-              <Mail size={16} className="text-gray-700" />
-              <span className="text-sm">{email}</span>
+              <MdEmail size={16} className="text-gray-700" />
+              <span className="text-sm font-medium font-sans">{email}</span>
             </div>
 
             {phone1 && (
               <div className="flex items-center gap-2 ">
-                <Phone size={16} className="text-gray-700" />
-                <span className="text-sm rtl:text-left">
+                <MdLocalPhone size={16} className="text-gray-700" />
+                <span className="text-sm font-medium font-sans rtl:text-left">
                   {phone1.text}: {phone1.phone}
                 </span>
               </div>
@@ -83,8 +85,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
             {phone2 && (
               <div className="flex items-center gap-2">
-                <Phone size={16} className="text-gray-700" />
-                <span className="text-sm rtl:text-left">
+                <RiWhatsappFill className="w-4 h-4" />
+                <span className="text-sm font-medium font-sans rtl:text-left">
                   {phone2.text}: {phone2.phone}
                 </span>
               </div>
@@ -92,8 +94,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
             {whatsapp && (
               <div className="flex items-center gap-2">
-                <FaWhatsapp className="w-4 h-4" />
-                <span className="text-sm rtl:text-left">
+                <RiWhatsappFill className="w-4 h-4" />
+                <span className="text-sm font-medium font-sans rtl:text-left">
                   {whatsapp.text}: {whatsapp.phone}
                 </span>
               </div>
@@ -101,16 +103,16 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
             {phone3 && (
               <div className="flex items-center gap-2">
-                <Music size={16} className="text-gray-700" />
-                <span className="text-sm rtl:text-left">
+                <RiWhatsappFill className="w-4 h-4" />
+                <span className="text-sm font-medium font-sans rtl:text-left">
                   {phone3.text}: {phone3.phone}
                 </span>
               </div>
             )}
 
             <div className="flex items-center gap-2">
-              <MapPin size={16} className="text-gray-700" />
-              <span className="text-sm">{address}</span>
+              <TiLocation size={20} className="text-black " />
+              <span className="text-sm font-medium font-sans">{address}</span>
             </div>
           </div>
 
@@ -118,7 +120,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
           <div data-aos="fade-up" className="mt-4">
             <button
               onClick={onContactClick}
-              className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition"
+              className="w-fit bg-blue-900 text-white py-2 px-6 rounded-2xl shadow-blue-900 my-3 shadow-2xl hover:bg-blue-800 transition"
             >
               {contactButtonText}
             </button>
