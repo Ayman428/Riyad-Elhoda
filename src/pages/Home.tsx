@@ -18,7 +18,7 @@ const Home = () => {
         classplus="pt-48"
         backgroundImage="/assets/HeroBg.png"
         title={t("header:riyadhAlHudaTitle")}
-        header="Riyadh AL-Huda Schools"
+        header="Riyadh AL-Huda Schools Company"
         description={t("header:riyadhAlHudaDescription")}
         isHomePage={true}
       />

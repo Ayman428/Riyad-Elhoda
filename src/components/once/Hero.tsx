@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import WrapperContainer from "../reuse/WrapperContainer";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import i18n from "../../utils/i18n";
+import { Link } from "react-router";
 
 interface HeroProps {
   backgroundImage: string;
   title: string;
   header?: string;
-  description: string;
+  description?: string;
   classplus: string;
+  link?: boolean;
   isHomePage?: boolean;
+  children?: ReactNode;
 }
 
 const sliderImages = [
@@ -25,6 +28,8 @@ const Hero: React.FC<HeroProps> = ({
   header,
   description,
   classplus,
+  children,
+  link = true,
   isHomePage = false,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -76,18 +81,27 @@ const Hero: React.FC<HeroProps> = ({
             >
               {header}
             </h1>
-            <p data-aos="fade-right" className="text-[#B7CCF6] md:text-lg mb-6">
-              {description}
-            </p>
-            <button
-              data-aos="fade-up"
-              className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]"
-            >
-              {i18n.language === "ar"
-                ? "سجل معنا الان"
-                : "Register With Us Now"}{" "}
-              {i18n.language === "ar" ? <IoArrowBack /> : <IoArrowForward />}{" "}
-            </button>
+            {description && (
+              <p
+                data-aos="fade-right"
+                className="text-[#B7CCF6] md:text-lg mb-6 whitespace-pre-line"
+              >
+                {description}
+              </p>
+            )}
+            {children && <div>{children}</div>}
+            {link && (
+              <Link
+                to={"/contact"}
+                data-aos="fade-up"
+                className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]"
+              >
+                {i18n.language === "ar"
+                  ? "سجل معنا الان"
+                  : "Register With Us Now"}{" "}
+                {i18n.language === "ar" ? <IoArrowBack /> : <IoArrowForward />}{" "}
+              </Link>
+            )}
           </div>
         </div>
       </WrapperContainer>

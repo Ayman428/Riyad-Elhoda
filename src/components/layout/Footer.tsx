@@ -62,6 +62,15 @@ const Footer = () => {
                   {t("branches")}
                 </Link>
               </li>
+              <li style={{ color: "#D5D5D5", opacity: 0.3 }}>
+                <Link
+                  target="_blank"
+                  className="hover:text-white"
+                  to="https://rhc.malhr.com/ar/recruitmentportal/job"
+                >
+                  {t("employment")}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -78,7 +87,7 @@ const Footer = () => {
               className="space-y-2 text-white text-opacity-80"
             >
               {data &&
-                data.slice(1).map((branch, index) => (
+                data.map((branch, index) => (
                   <li key={index} style={{ color: "#D5D5D5", opacity: 0.3 }}>
                     <Link to={`/school-branch/#${index}`}>{branch.title}</Link>
                   </li>

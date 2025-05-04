@@ -19,9 +19,15 @@ const Navbar: React.FC = () => {
   }, [currentLang]);
 
   const navLinks = [
-    { label: t("navbar:home"), to: "/" },
-    { label: t("navbar:about"), to: "/about" },
-    { label: t("navbar:schoolbranch"), to: "/school-branch" },
+    { label: t("navbar:home"), to: "/", target: "" },
+    { label: t("navbar:about"), to: "/about", target: "" },
+    { label: t("navbar:schoolbranch"), to: "/school-branch", target: "" },
+    {
+      label: t("navbar:employment"),
+      to: "https://rhc.malhr.com/ar/recruitmentportal/job",
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
   ];
 
   return (
@@ -34,6 +40,7 @@ const Navbar: React.FC = () => {
               <React.Fragment key={link.to}>
                 <NavLink
                   to={link.to}
+                  target={link.target}
                   className={({ isActive }) =>
                     isActive
                       ? "text-[#10357F] border-b-2 border-[#10357F] pb-1"
@@ -66,7 +73,10 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-2xl text-[#10357F]">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-2xl text-[#10357F]"
+          >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>

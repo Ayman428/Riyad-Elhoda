@@ -20,7 +20,7 @@ const GoalsContainer = () => {
           }}
         />
 
-        <div className="w-[90%] m-auto mt-3">
+        <div className="w-[90%] m-auto mt-3 py-4">
           <HeaderOne
             label={t("home:goals.sub_title")}
             classPlus="flex justify-center my-2 "

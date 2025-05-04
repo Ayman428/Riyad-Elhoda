@@ -85,7 +85,7 @@ const ContactForm = () => {
       <div className="text-lg text-gray-600 mb-8">
         <div className="w-full flex gap-5">
           {data &&
-            data.slice(1).map((branch, index, array) => {
+            data.map((branch, index, array) => {
               const isSelected = selectedBranch?.id === branch.id;
               const isLast = index === array.length - 1;
 

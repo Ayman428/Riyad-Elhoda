@@ -14,6 +14,7 @@ const Contact = () => {
                 title={t("header:riyadhAlHudaContact")}
                 description={t("header:riyadhAlHudaContactDetails")}
                 isHomePage={false}
+                link={false}
             />
             <ContactForm />
             <FAQs />
