@@ -6,7 +6,7 @@ import { useScrollToHash } from "../../hooks/useScrollToHash";
 import profile from "/public/assets/profile.png";
 import { useNavigate } from "react-router";
 
-// Example usage
+// Example usage dqsadqw
 const LocationContactCard = () => {
   const { data } = useFetchSchoolBranches();
   useScrollToHash();
