@@ -94,24 +94,6 @@ const Footer = () => {
                 ))}
             </ul>
           </div>
-
-          <div>
-            <h3
-              data-aos="fade-up"
-              className="font-semibold mb-4 text-lg"
-              style={{ color: "#FCFCFC" }}
-            >
-              {t("contactUs")}
-            </h3>
-            <ul
-              data-aos="fade-right"
-              className="space-y-2 text-white text-opacity-80"
-            >
-              <li>{data && data[0].email}</li>
-              <li>{data && data[0]?.phones?.phones?.[0]}</li>
-              <li>{data && data[0].address}</li>
-            </ul>
-          </div>
         </div>
 
         <div className="border-t border-white border-opacity-20 mt-4 pt-4 text-center text-sm text-white text-opacity-60">

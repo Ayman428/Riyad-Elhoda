@@ -2,7 +2,7 @@ import React, { useState, useEffect, ReactNode } from "react";
 import WrapperContainer from "../reuse/WrapperContainer";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import i18n from "../../utils/i18n";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 interface HeroProps {
   backgroundImage: string;
@@ -43,6 +43,9 @@ const Hero: React.FC<HeroProps> = ({
     }
   }, [isHomePage]);
 
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
+
   const activeBackground = isHomePage
     ? sliderImages[currentSlide]
     : backgroundImage;
@@ -70,21 +73,28 @@ const Hero: React.FC<HeroProps> = ({
             className={`relative z-20 text-white w-full flex flex-col justify-center ${classplus}`}
           >
             <h4
-              //   data-aos="fade-right"
-              className="text-4xl md:text-7xl font-bold text-white uppercase mb-6"
+              className={`font-bold uppercase mb-6 ${
+                isAboutPage
+                  ? "text-2xl md:text-lg text-[#B7CCF6]"
+                  : "text-4xl md:text-7xl text-white"
+              }`}
             >
               {title}
             </h4>
+
             <h1
-              //   data-aos="fade-right"
-              className="text-4xl md:text-5xl font-bold mb-4 text-[#B7CCF6]"
+              className={`font-bold mb-4 ${
+                isAboutPage
+                  ? "text-2xl md:text-6xl font-bold text-white"
+                  : "text-4xl md:text-5xl text-[#B7CCF6]"
+              }`}
             >
               {header}
             </h1>
             {description && (
               <p
                 data-aos="fade-right"
-                className="text-[#B7CCF6] md:text-lg mb-6 whitespace-pre-line"
+                className="text-[#B7CCF6] md:text-lg mb-6 whitespace-pre-line max-w-3xl"
               >
                 {description}
               </p>

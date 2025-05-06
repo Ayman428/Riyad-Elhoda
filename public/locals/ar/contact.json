@@ -4,8 +4,8 @@
   "school3": "برنامج رياض الهدى",
   "school4": "كليه الفيحاء الاهليه",
   "form": {
-    "buttonText": "سجل معنا الآن",
-    "parentName": "اسم ولي الأمر",
+    "buttonText": "تواصل معنا",
+    "parentName": "الاسم",
     "parentNamePlaceholder": "قم بكتابة اسم ولي الأمر",
     "studentName": "اسم الطالب",
     "studentNamePlaceholder": "قم بكتابة اسم الطالب الكامل",

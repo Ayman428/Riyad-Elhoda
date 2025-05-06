@@ -19,8 +19,7 @@ interface ContactCardProps {
   mapImageSrc: string;
   profileImageSrc: string;
   contactButtonText: string;
-  lat: string;
-  lng: string;
+  mapSrc: string;
   onContactClick?: () => void;
 }
 
@@ -35,8 +34,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
   address,
   profileImageSrc,
   contactButtonText,
-  lat,
-  lng,
+  mapSrc,
   onContactClick,
 }) => {
   return (
@@ -71,7 +69,12 @@ const ContactCard: React.FC<ContactCardProps> = ({
           <div className="space-y-2 text-black">
             <div className="flex items-center gap-2">
               <MdEmail size={16} className="text-gray-700" />
-              <span className="text-sm font-medium font-sans">{email}</span>
+              <span
+                dir="ltr"
+                className="text-sm font-medium font-sans flex ltr:text-right"
+              >
+                {email}
+              </span>
             </div>
 
             {phone1 && (
@@ -92,15 +95,6 @@ const ContactCard: React.FC<ContactCardProps> = ({
               </div>
             )}
 
-            {whatsapp && (
-              <div className="flex items-center gap-2">
-                <RiWhatsappFill className="w-4 h-4" />
-                <span className="text-sm font-medium font-sans rtl:text-left">
-                  {whatsapp.text}: {whatsapp.phone}
-                </span>
-              </div>
-            )}
-
             {phone3 && (
               <div className="flex items-center gap-2">
                 <RiWhatsappFill className="w-4 h-4" />
@@ -110,9 +104,19 @@ const ContactCard: React.FC<ContactCardProps> = ({
               </div>
             )}
 
+            {whatsapp && (
+              <div className="flex items-center gap-2">
+                <RiWhatsappFill className="w-4 h-4" />
+                <span className="text-sm font-medium font-sans rtl:text-left">
+                  {whatsapp.text}: {whatsapp.phone}
+                </span>
+              </div>
+            )}
             <div className="flex items-center gap-2">
               <TiLocation size={20} className="text-black " />
-              <span className="text-sm font-medium font-sans">{address}</span>
+              <span className="text-sm font-medium font-sans flex">
+                {address}
+              </span>
             </div>
           </div>
 
@@ -120,7 +124,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
           <div data-aos="fade-up" className="mt-4">
             <button
               onClick={onContactClick}
-              className="w-fit bg-blue-900 text-white py-2 px-6 rounded-2xl shadow-blue-900 my-3 shadow-2xl hover:bg-blue-800 transition"
+              className="w-fit cursor-pointer font-semibold bg-blue-900 text-white py-2 px-6 rounded-2xl shadow-blue-900 my-3 shadow-2xl hover:bg-blue-800 transition"
             >
               {contactButtonText}
             </button>
@@ -131,14 +135,15 @@ const ContactCard: React.FC<ContactCardProps> = ({
       {/* Map Section */}
       <div className="w-full h-[720px] relative rounded-xl overflow-hidden p-4">
         <iframe
-          src={`https://maps.google.com/maps?q=${lat},${lng}&z=14&output=embed`}
-          // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.2367231407486!2d46.67529507535348!3d24.7135512780637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f038f06b2a6ef%3A0xf4f7c0f9a87dfb11!2sRiyadh!5e0!3m2!1sen!2ssa!4v1713433506192!5m2!1sen!2ssa"
-          className="w-full h-full"
-          style={{ border: 0 }}
-          allowFullScreen
+          src={mapSrc}
+          width="100%"
+          height="100%"
           loading="lazy"
+          className="map-iframe"
+          title="Rawdhat Riyadh Al-Hada (2) Map"
+          allowFullScreen={true}
           referrerPolicy="no-referrer-when-downgrade"
-        />
+        ></iframe>
       </div>
     </div>
   );

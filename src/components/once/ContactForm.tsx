@@ -45,11 +45,11 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    student_name: "",
-    last_name: "_",
-    class: "",
-    level: "",
-    message: "",
+    student_name: "ssss",
+    last_name: "_ss",
+    class: "sss",
+    level: "sss",
+    message: "sssss",
   });
 
   useEffect(() => {
@@ -88,19 +88,41 @@ const ContactForm = () => {
             data.map((branch, index, array) => {
               const isSelected = selectedBranch?.id === branch.id;
               const isLast = index === array.length - 1;
+              const link =
+                index === array.length - 1
+                  ? "https://edugate.fayha.edu.sa/fpc/ui/guest/application_online/index/typeApplicationOnlineIndex.faces"
+                  : "";
 
               return (
-                <p
-                  className={`font-bold cursor-pointer ${
-                    isSelected
-                      ? "text-[#10357F] font-bold"
-                      : "text-[#1E1E1E] font-normal text-[18px]"
-                  }`}
-                  key={index}
-                  onClick={() => handleBranchClick(branch)}
-                >
-                  {branch.title} {!isLast && <span>|</span>}
-                </p>
+                <>
+                  {link === "" ? (
+                    <p
+                      className={`font-bold cursor-pointer ${
+                        isSelected
+                          ? "text-[#10357F] font-bold"
+                          : "text-[#1E1E1E] font-normal text-[18px]"
+                      }`}
+                      key={index}
+                      onClick={() => handleBranchClick(branch)}
+                    >
+                      {branch.title} {!isLast && <span>|</span>}
+                    </p>
+                  ) : (
+                    <p
+                      className={`font-bold cursor-pointer ${
+                        isSelected
+                          ? "text-[#10357F] font-bold"
+                          : "text-[#1E1E1E] font-normal text-[18px]"
+                      }`}
+                      key={index}
+                      onClick={() => handleBranchClick(branch)}
+                    >
+                      <a href={link} target="_blank">
+                        {branch.title}
+                      </a>
+                    </p>
+                  )}
+                </>
               );
             })}
         </div>
@@ -134,7 +156,7 @@ const ContactForm = () => {
               />
             </div>
 
-            <div data-aos="fade-right" className="form-control">
+            {/* <div data-aos="fade-right" className="form-control">
               <label className="block mb-1 font-medium">
                 {t("form.studentName")}
               </label>
@@ -147,9 +169,9 @@ const ContactForm = () => {
                 onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
-            </div>
+            </div> */}
 
-            <div data-aos="fade-right" className="form-control">
+            {/* <div data-aos="fade-right" className="form-control">
               <label className="block mb-1 font-medium">
                 {t("form.grade")}
               </label>
@@ -173,7 +195,7 @@ const ContactForm = () => {
                   {t("contact:grades.thirdgrade")}
                 </option>
               </select>
-            </div>
+            </div> */}
 
             <div data-aos="fade-right" className="form-control">
               <label className="block mb-1 font-medium">
@@ -205,7 +227,7 @@ const ContactForm = () => {
               />
             </div>
 
-            <div data-aos="fade-right" className="form-control md:col-span-2">
+            {/* <div data-aos="fade-right" className="form-control md:col-span-2">
               <label className="block mb-1 font-medium">
                 {t("form.subject")}
               </label>
@@ -218,9 +240,9 @@ const ContactForm = () => {
                 onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
-            </div>
+            </div> */}
 
-            <div data-aos="fade-right" className="form-control md:col-span-2">
+            {/* <div data-aos="fade-right" className="form-control md:col-span-2">
               <label className="block mb-1 font-medium">
                 {t("form.message")}
               </label>
@@ -233,7 +255,7 @@ const ContactForm = () => {
                 onChange={handleFormChange}
                 placeholder={t("form.messagePlaceholder")}
               />
-            </div>
+            </div> */}
 
             <div data-aos="fade-right" className="form-control md:col-span-2">
               <button
@@ -264,7 +286,7 @@ const ContactForm = () => {
                   {t("contactInfo.phoneLabel")}
                 </p>
                 <p className="font-semibold group-hover:text-white transition">
-                  {selectedBranch && selectedBranch.phones?.phones?.[0]}
+                  920031928
                 </p>
               </div>
             </div>
@@ -278,7 +300,7 @@ const ContactForm = () => {
                   {t("contactInfo.emailLabel")}
                 </p>
                 <p className="font-semibold break-words group-hover:text-white transition">
-                  {selectedBranch && selectedBranch.email}
+                  info@fayha.edu.sa
                 </p>
               </div>
             </div>
