@@ -20,7 +20,7 @@ const FAQs = () => {
     };
 
     return (
-        <div className="py-16 bg-white text-right">
+        <div className="bg-white text-right">
             <WrapperContainer>
                 <HeaderOne label={t("header:faqTitle")} classPlus="justify-center" />
                 <h2

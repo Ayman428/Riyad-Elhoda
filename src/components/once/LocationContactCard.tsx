@@ -31,7 +31,7 @@ const LocationContactCard = () => {
     {
       phone1: { text: "الروضة والابتدائي", phone: "0133480704" },
       phone2: { text: "المتوسط والثانوي", phone: "0531274577" },
-      phone3: { text: "واتساب الموعد", phone: "0555283855" },
+      phone3: { text: "واتساب", phone: "0555283855" },
       phone4: null,
     },
     {

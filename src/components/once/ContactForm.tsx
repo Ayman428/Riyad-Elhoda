@@ -97,11 +97,10 @@ const ContactForm = () => {
                 <>
                   {link === "" ? (
                     <p
-                      className={`font-bold cursor-pointer ${
-                        isSelected
+                      className={`font-bold cursor-pointer ${isSelected
                           ? "text-[#10357F] font-bold"
                           : "text-[#1E1E1E] font-normal text-[18px]"
-                      }`}
+                        }`}
                       key={index}
                       onClick={() => handleBranchClick(branch)}
                     >
@@ -109,11 +108,10 @@ const ContactForm = () => {
                     </p>
                   ) : (
                     <p
-                      className={`font-bold cursor-pointer ${
-                        isSelected
+                      className={`font-bold cursor-pointer ${isSelected
                           ? "text-[#10357F] font-bold"
                           : "text-[#1E1E1E] font-normal text-[18px]"
-                      }`}
+                        }`}
                       key={index}
                       onClick={() => handleBranchClick(branch)}
                     >
@@ -356,6 +354,11 @@ const ContactForm = () => {
             </a>
           </div>
         </div>
+      </div>
+      <div>
+        <a href="https://madares.sa/" target="_blank">
+          <p className="text-2xl text-black mt-8 p-2">"مدرس منصة عبر التسجيل" <span>بوتون</span></p>
+        </a>
       </div>
     </WrapperContainer>
   );
