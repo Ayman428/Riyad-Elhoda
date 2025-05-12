@@ -67,15 +67,17 @@ const ContactCard: React.FC<ContactCardProps> = ({
         <div data-aos="fade-left" className="mt-auto">
           {/* Contact Details */}
           <div className="space-y-2 text-black">
-            <div className="flex items-center gap-2">
-              <MdEmail size={16} className="text-gray-700" />
-              <span
-                dir="ltr"
-                className="text-sm font-medium font-sans flex ltr:text-right"
-              >
-                {email}
-              </span>
-            </div>
+            {email && (
+              <div className="flex items-center gap-2">
+                <MdEmail size={16} className="text-gray-700" />
+                <span
+                  dir="ltr"
+                  className="text-sm font-medium font-sans flex ltr:text-right"
+                >
+                  {email}
+                </span>
+              </div>
+            )}
 
             {phone1 && (
               <div className="flex items-center gap-2 ">

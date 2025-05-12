@@ -2,7 +2,7 @@ import React, { useState, useEffect, ReactNode } from "react";
 import WrapperContainer from "../reuse/WrapperContainer";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import i18n from "../../utils/i18n";
-import { Link, useLocation } from "react-router";
+import { useLocation } from "react-router";
 
 interface HeroProps {
   backgroundImage: string;
@@ -101,8 +101,9 @@ const Hero: React.FC<HeroProps> = ({
             )}
             {children && <div>{children}</div>}
             {link && (
-              <Link
-                to={"/contact"}
+              <a
+                href="https://madares.sa/"
+                target="_blank"
                 data-aos="fade-up"
                 className="btn shadow-none border-[#FCFCFC] w-fit text-[#10357F] bg-[#FCFCFC]"
               >
@@ -110,7 +111,7 @@ const Hero: React.FC<HeroProps> = ({
                   ? "سجل معنا الان"
                   : "Register With Us Now"}{" "}
                 {i18n.language === "ar" ? <IoArrowBack /> : <IoArrowForward />}{" "}
-              </Link>
+              </a>
             )}
           </div>
         </div>

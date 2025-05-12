@@ -94,37 +94,29 @@ const ContactForm = () => {
                   : "";
 
               return (
-                <>
+                <p
+                  key={index}
+                  className={`font-bold cursor-pointer ${isSelected
+                    ? "text-[#10357F] font-bold"
+                    : "text-[#1E1E1E] font-normal text-[18px]"
+                    }`}
+                  onClick={() => handleBranchClick(branch)}
+                >
                   {link === "" ? (
-                    <p
-                      className={`font-bold cursor-pointer ${isSelected
-                          ? "text-[#10357F] font-bold"
-                          : "text-[#1E1E1E] font-normal text-[18px]"
-                        }`}
-                      key={index}
-                      onClick={() => handleBranchClick(branch)}
-                    >
+                    <>
                       {branch.title} {!isLast && <span>|</span>}
-                    </p>
+                    </>
                   ) : (
-                    <p
-                      className={`font-bold cursor-pointer ${isSelected
-                          ? "text-[#10357F] font-bold"
-                          : "text-[#1E1E1E] font-normal text-[18px]"
-                        }`}
-                      key={index}
-                      onClick={() => handleBranchClick(branch)}
-                    >
-                      <a href={link} target="_blank">
-                        {branch.title}
-                      </a>
-                    </p>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                      {branch.title}
+                    </a>
                   )}
-                </>
+                </p>
               );
             })}
         </div>
       </div>
+
       <div className="grid lg:grid-cols-3 gap-6">
         <div
           key={formKey}
@@ -153,47 +145,6 @@ const ContactForm = () => {
                 className="input input-bordered border-black bg-white w-full"
               />
             </div>
-
-            {/* <div data-aos="fade-right" className="form-control">
-              <label className="block mb-1 font-medium">
-                {t("form.studentName")}
-              </label>
-              <input
-                type="text"
-                name="student_name"
-                value={formData.student_name}
-                required
-                placeholder={t("form.studentNamePlaceholder")}
-                onChange={handleFormChange}
-                className="input input-bordered border-black bg-white w-full"
-              />
-            </div> */}
-
-            {/* <div data-aos="fade-right" className="form-control">
-              <label className="block mb-1 font-medium">
-                {t("form.grade")}
-              </label>
-              <select
-                className="select select-bordered border-black bg-white w-full"
-                name="class"
-                value={formData.class}
-                required
-                onChange={handleFormChange}
-              >
-                <option value="" disabled hidden>
-                  {t("form.gradePlaceholder")}
-                </option>
-                <option value={t("contact:grades.firstgrade")}>
-                  {t("contact:grades.firstgrade")}
-                </option>
-                <option value={t("contact:grades.secondgrade")}>
-                  {t("contact:grades.secondgrade")}
-                </option>
-                <option value={t("contact:grades.thirdgrade")}>
-                  {t("contact:grades.thirdgrade")}
-                </option>
-              </select>
-            </div> */}
 
             <div data-aos="fade-right" className="form-control">
               <label className="block mb-1 font-medium">
@@ -225,36 +176,6 @@ const ContactForm = () => {
               />
             </div>
 
-            {/* <div data-aos="fade-right" className="form-control md:col-span-2">
-              <label className="block mb-1 font-medium">
-                {t("form.subject")}
-              </label>
-              <input
-                type="text"
-                placeholder={t("form.subjectPlaceholder")}
-                name="level"
-                value={formData.level}
-                required
-                onChange={handleFormChange}
-                className="input input-bordered border-black bg-white w-full"
-              />
-            </div> */}
-
-            {/* <div data-aos="fade-right" className="form-control md:col-span-2">
-              <label className="block mb-1 font-medium">
-                {t("form.message")}
-              </label>
-              <textarea
-                className="textarea textarea-bordered border-black bg-white w-full"
-                rows={4}
-                name="message"
-                value={formData.message}
-                required
-                onChange={handleFormChange}
-                placeholder={t("form.messagePlaceholder")}
-              />
-            </div> */}
-
             <div data-aos="fade-right" className="form-control md:col-span-2">
               <button
                 type="submit"
@@ -264,12 +185,11 @@ const ContactForm = () => {
               </button>
             </div>
           </form>
-          {isError ? (
+
+          {isError && (
             <div className="p-2.5 text-center bg-red-100 mt-3">
               <p className="text-red-800">{error.message}</p>
             </div>
-          ) : (
-            ""
           )}
         </div>
 
@@ -302,63 +222,71 @@ const ContactForm = () => {
                 </p>
               </div>
             </div>
+            {data && data.length >= 4 && selectedBranch && (
+              <div
+                className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition"
+                data-aos="fade-up"
+              >
+                <div className="rounded-full p-3">
+                  <MdLocationOn className="text-2xl text-[#10357F] group-hover:text-white transition" />
+                </div>
+                <div className="mr-4">
+                  <p className="text-sm text-gray-500 group-hover:text-white transition">
+                    {t("contactInfo.workingHours")}
+                  </p>
+                  <p className="font-semibold group-hover:text-white transition">
+                    {t("contactInfo.workingDays")}
+                    <br />
+                    {
+                      selectedBranch === data[3]
+                        ? t("contactInfo.workingTime2")
+                        : t("contactInfo.workingTime")
+                    }
+                  </p>
+                </div>
+              </div>
+            )}
 
-            <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
-              <div className="rounded-full p-3">
-                <MdLocationOn className="text-2xl text-[#10357F] group-hover:text-white transition" />
-              </div>
-              <div className="mr-4">
-                <p className="text-sm text-gray-500 group-hover:text-white transition">
-                  {t("contactInfo.workingHours")}
-                </p>
-                <p className="font-semibold group-hover:text-white transition">
-                  {t("contactInfo.workingDays")}
-                  <br />
-                  {t("contactInfo.workingTime")}
-                </p>
-              </div>
+
+            <div
+              className="flex justify-around gap-3 pt-2 border border-[#E4E4E4] p-2 rounded-lg"
+              data-aos="fade-up"
+            >
+              <a
+                href={selectedBranch?.social_media.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
+              >
+                <FaFacebookF size={20} />
+              </a>
+              <a
+                href={selectedBranch?.social_media.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
+              >
+                <FaInstagram size={20} />
+              </a>
+              <a
+                href={selectedBranch?.social_media.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
+              >
+                <FaLinkedinIn size={20} />
+              </a>
+              <a
+                href={selectedBranch?.social_media.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
+              >
+                <FaYoutube size={20} />
+              </a>
             </div>
           </div>
-
-          <div
-            className="flex justify-around gap-3 pt-2 border border-[#E4E4E4] p-2 rounded-lg"
-            data-aos="fade-up"
-          >
-            <a
-              href={selectedBranch?.social_media.facebook}
-              target="_blank"
-              className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
-            >
-              <FaFacebookF size={20} />
-            </a>
-            <a
-              href={selectedBranch?.social_media.instagram}
-              target="_blank"
-              className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
-            >
-              <FaInstagram size={20} />
-            </a>
-            <a
-              href={selectedBranch?.social_media.linkedin}
-              target="_blank"
-              className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
-            >
-              <FaLinkedinIn size={20} />
-            </a>
-            <a
-              href={selectedBranch?.social_media.tiktok}
-              target="_blank"
-              className="btn bg-white btn-sm text-[#BDBDBD] border-none shadow-none hover:text-[#10357F]"
-            >
-              <FaYoutube size={20} />
-            </a>
-          </div>
         </div>
-      </div>
-      <div>
-        <a href="https://madares.sa/" target="_blank">
-          <p className="text-2xl text-black mt-8 p-2">"مدرس منصة عبر التسجيل" <span>بوتون</span></p>
-        </a>
       </div>
     </WrapperContainer>
   );

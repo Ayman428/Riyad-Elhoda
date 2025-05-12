@@ -27,7 +27,8 @@
     "emailAddress": "info@riyadhalhuda.edu.sa",
     "workingHours": "ساعات العمل",
     "workingDays": "من الأحد إلى الخميس",
-    "workingTime": "AM 9:00  - 6:00 PM"
+    "workingTime": "6:45 AM - 2:00 PM",
+    "workingTime2": "AM 8:00  - 4:00 PM"
   },
   "grades": {
     "firstgrade": "الصف الأول",

@@ -41,7 +41,7 @@ const LocationContactCard = () => {
       phone4: null,
     },
     {
-      phone1: { text: "الهاتف", phone: "32-651-566-966+" },
+      phone1: null,
       phone2: null,
       phone3: null,
       phone4: null,
