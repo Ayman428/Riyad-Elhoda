@@ -22,7 +22,7 @@ const SchoolGoalCard = ({ icon, title, body }: CardProps) => {
               height="30px"
             />
           </div>
-          <p className="text-[#B7CCF6] font-bold text-lg">{title}</p>
+          <p className="text-[#B7CCF6] font-bold text-lg mt-4">{title}</p>
         </div>
       </div>
 

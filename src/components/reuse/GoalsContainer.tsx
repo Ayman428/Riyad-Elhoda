@@ -23,7 +23,7 @@ const GoalsContainer = () => {
         <div className="w-[90%] m-auto mt-3 py-4">
           <HeaderOne
             label={t("home:goals.sub_title")}
-            classPlus="flex justify-center my-2 "
+            classPlus="flex justify-center my-2"
             fontSize="35px"
           />
           <p className="text-white text-2xl xl:text-4xl font-bold text-center">

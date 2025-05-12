@@ -97,10 +97,23 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
             {phone3 && (
               <div className="flex items-center gap-2">
-                <RiWhatsappFill className="w-4 h-4" />
-                <span className="text-sm font-medium font-sans rtl:text-left">
-                  {phone3.text}: {phone3.phone}
-                </span>
+                {phone3.text.includes("واتساب") ? (
+                  <>
+                    <RiWhatsappFill className="w-4 h-4" />
+                    <span>|</span>
+                    <MdLocalPhone className="w-4 h-4" />
+                    <span className="text-sm font-medium font-sans rtl:text-left">
+                      {phone3.text}: {phone3.phone}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <RiWhatsappFill className="w-4 h-4" />
+                    <span className="text-sm font-medium font-sans rtl:text-left">
+                      {phone3.text}: {phone3.phone}
+                    </span>
+                  </>
+                )}
               </div>
             )}
 
