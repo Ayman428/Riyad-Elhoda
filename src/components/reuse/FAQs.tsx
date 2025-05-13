@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const FAQs = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
-    const { data, isLoading, error } = useFaqs("ar");
+    const { data, isLoading, error } = useFaqs();
     const { t } = useTranslation();
 
     if (isLoading) return <div className="text-center py-10">جارٍ التحميل...</div>;
