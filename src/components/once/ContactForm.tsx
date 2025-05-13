@@ -140,7 +140,7 @@ const ContactForm = () => {
                 name="name"
                 value={formData.name}
                 required
-                placeholder={t("form.parentNamePlaceholder")}
+                // placeholder={t("form.parentNamePlaceholder")}
                 onChange={handleFormChange}
                 className="input input-bordered border-black bg-white w-full"
               />
@@ -152,7 +152,7 @@ const ContactForm = () => {
               </label>
               <input
                 type="email"
-                placeholder={t("form.emailPlaceholder")}
+                // placeholder={t("form.emailPlaceholder")}
                 name="email"
                 value={formData.email}
                 required
@@ -167,7 +167,7 @@ const ContactForm = () => {
               </label>
               <input
                 type="text"
-                placeholder={t("form.phonePlaceholder")}
+                // placeholder={t("form.phonePlaceholder")}
                 name="phone"
                 value={formData.phone}
                 required
@@ -195,33 +195,38 @@ const ContactForm = () => {
 
         <div className="space-y-4">
           <div className="flex flex-col gap-4" data-aos="fade-up">
-            <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
-              <div className="rounded-full p-3">
-                <MdPhone className="text-2xl text-[#10357F] group-hover:text-white transition" />
-              </div>
-              <div className="mr-4">
-                <p className="text-sm text-gray-500 group-hover:text-white transition">
-                  {t("contactInfo.phoneLabel")}
-                </p>
-                <p className="font-semibold group-hover:text-white transition">
-                  920031928
-                </p>
-              </div>
-            </div>
+            {selectedBranch !== data?.[3] && (
+              <>
+                <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
+                  <div className="rounded-full p-3">
+                    <MdPhone className="text-2xl text-[#10357F] group-hover:text-white transition" />
+                  </div>
+                  <div className="mr-4">
+                    <p className="text-sm text-gray-500 group-hover:text-white transition">
+                      {t("contactInfo.phoneLabel")}
+                    </p>
+                    <p className="font-semibold group-hover:text-white transition">
+                      920031928
+                    </p>
+                  </div>
+                </div>
 
-            <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
-              <div className="rounded-full p-3 bg-white">
-                <MdEmail className="text-2xl text-[#10357F] group-hover:text-[#10357F]" />
-              </div>
-              <div className="mr-4">
-                <p className="text-sm text-gray-500 group-hover:text-white transition">
-                  {t("contactInfo.emailLabel")}
-                </p>
-                <p className="font-semibold break-words group-hover:text-white transition">
-                  info@fayha.edu.sa
-                </p>
-              </div>
-            </div>
+                <div className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition">
+                  <div className="rounded-full p-3 bg-white">
+                    <MdEmail className="text-2xl text-[#10357F] group-hover:text-[#10357F]" />
+                  </div>
+                  <div className="mr-4">
+                    <p className="text-sm text-gray-500 group-hover:text-white transition">
+                      {t("contactInfo.emailLabel")}
+                    </p>
+                    <p className="font-semibold break-words group-hover:text-white transition">
+                      info@fayha.edu.sa
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
+
             {data && data.length >= 4 && selectedBranch && (
               <div
                 className="group flex items-center rounded-lg shadow p-4 text-black hover:bg-[#10357F] transition"

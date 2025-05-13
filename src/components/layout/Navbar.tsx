@@ -28,6 +28,12 @@ const Navbar: React.FC = () => {
       target: "_blank",
       rel: "noopener noreferrer",
     },
+    {
+      label: t("navbar:register"),
+      to: "https://madares.sa/",
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
   ];
 
   return (

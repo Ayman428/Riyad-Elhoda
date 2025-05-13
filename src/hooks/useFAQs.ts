@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import apiClient from "../utils/api-client";
 import { AxiosError } from "axios";
+import { useTranslation } from "react-i18next";
 
 interface FAQ {
     question: string;
@@ -14,12 +15,14 @@ interface FaqsResponse {
     code: number;
 }
 
-const useFaqs = (language: string) => {
+const useFaqs = () => {
+    const { i18n } = useTranslation();
+
     return useQuery<FaqsResponse, AxiosError>({
-        queryKey: ["faqs", language],
+        queryKey: ["faqs", i18n.language],
         queryFn: async () => {
             const response = await apiClient.get("/api/frontend/faqs", {
-                headers: { "Accept-Language": language },
+                headers: { "Accept-Language": i18n.language },
             });
             return response.data;
         },
